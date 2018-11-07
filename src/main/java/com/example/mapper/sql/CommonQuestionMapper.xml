@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.CommonQuestionMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.CommonQuestion" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="MATTER_ID" property="matterId" jdbcType="VARCHAR" />
+    <result column="QUESTION_NAME" property="questionName" jdbcType="VARCHAR" />
+    <result column="QUESTION_ANSWER" property="questionAnswer" jdbcType="VARCHAR" />
+    <result column="QUESTION_VERSION" property="questionVersion" jdbcType="VARCHAR" />
+    <result column="EXCHANGE" property="exchange" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, MATTER_ID, QUESTION_NAME, QUESTION_ANSWER, QUESTION_VERSION, EXCHANGE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.CommonQuestionExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TJ_COMMON_QUESTION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TJ_COMMON_QUESTION
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TJ_COMMON_QUESTION
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.CommonQuestionExample" >
+    delete from TJ_COMMON_QUESTION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.CommonQuestion" >
+    insert into TJ_COMMON_QUESTION (ID, MATTER_ID, QUESTION_NAME, 
+      QUESTION_ANSWER, QUESTION_VERSION, EXCHANGE
+      )
+    values (#{id,jdbcType=VARCHAR}, #{matterId,jdbcType=VARCHAR}, #{questionName,jdbcType=VARCHAR}, 
+      #{questionAnswer,jdbcType=VARCHAR}, #{questionVersion,jdbcType=VARCHAR}, #{exchange,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.CommonQuestion" >
+    insert into TJ_COMMON_QUESTION
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="matterId != null" >
+        MATTER_ID,
+      </if>
+      <if test="questionName != null" >
+        QUESTION_NAME,
+      </if>
+      <if test="questionAnswer != null" >
+        QUESTION_ANSWER,
+      </if>
+      <if test="questionVersion != null" >
+        QUESTION_VERSION,
+      </if>
+      <if test="exchange != null" >
+        EXCHANGE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="matterId != null" >
+        #{matterId,jdbcType=VARCHAR},
+      </if>
+      <if test="questionName != null" >
+        #{questionName,jdbcType=VARCHAR},
+      </if>
+      <if test="questionAnswer != null" >
+        #{questionAnswer,jdbcType=VARCHAR},
+      </if>
+      <if test="questionVersion != null" >
+        #{questionVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="exchange != null" >
+        #{exchange,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.CommonQuestionExample" resultType="java.lang.Integer" >
+    select count(*) from TJ_COMMON_QUESTION
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TJ_COMMON_QUESTION
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matterId != null" >
+        MATTER_ID = #{record.matterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.questionName != null" >
+        QUESTION_NAME = #{record.questionName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.questionAnswer != null" >
+        QUESTION_ANSWER = #{record.questionAnswer,jdbcType=VARCHAR},
+      </if>
+      <if test="record.questionVersion != null" >
+        QUESTION_VERSION = #{record.questionVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exchange != null" >
+        EXCHANGE = #{record.exchange,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TJ_COMMON_QUESTION
+    set ID = #{record.id,jdbcType=VARCHAR},
+      MATTER_ID = #{record.matterId,jdbcType=VARCHAR},
+      QUESTION_NAME = #{record.questionName,jdbcType=VARCHAR},
+      QUESTION_ANSWER = #{record.questionAnswer,jdbcType=VARCHAR},
+      QUESTION_VERSION = #{record.questionVersion,jdbcType=VARCHAR},
+      EXCHANGE = #{record.exchange,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.CommonQuestion" >
+    update TJ_COMMON_QUESTION
+    <set >
+      <if test="matterId != null" >
+        MATTER_ID = #{matterId,jdbcType=VARCHAR},
+      </if>
+      <if test="questionName != null" >
+        QUESTION_NAME = #{questionName,jdbcType=VARCHAR},
+      </if>
+      <if test="questionAnswer != null" >
+        QUESTION_ANSWER = #{questionAnswer,jdbcType=VARCHAR},
+      </if>
+      <if test="questionVersion != null" >
+        QUESTION_VERSION = #{questionVersion,jdbcType=VARCHAR},
+      </if>
+      <if test="exchange != null" >
+        EXCHANGE = #{exchange,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.CommonQuestion" >
+    update TJ_COMMON_QUESTION
+    set MATTER_ID = #{matterId,jdbcType=VARCHAR},
+      QUESTION_NAME = #{questionName,jdbcType=VARCHAR},
+      QUESTION_ANSWER = #{questionAnswer,jdbcType=VARCHAR},
+      QUESTION_VERSION = #{questionVersion,jdbcType=VARCHAR},
+      EXCHANGE = #{exchange,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>

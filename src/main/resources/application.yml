@@ -1,0 +1,15 @@
+#spring配置
+spring:
+  datasource:
+    name: mysql_test
+    type: com.alibaba.druid.pool.DruidDataSource
+    #druid配置
+    druid:
+      driver-class-name: com.mysql.jdbc.Driver
+      url: jdbc:mysql://127.0.0.1:3306/plan?useUnicode=true&characterEncoding=UTF-8&nullCatalogMeansCurrent=true
+      username: root
+      password: root
+
+mybatis:
+  config-location: classpath:mapper/*.xml
+  type-aliases-package: com.example.model

@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.SpecialInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.SpecialInfo" >
+    <id column="FLOW_ID" property="flowId" jdbcType="VARCHAR" />
+    <result column="FLOW_NAME" property="flowName" jdbcType="VARCHAR" />
+    <result column="FLOW_TYPE" property="flowType" jdbcType="VARCHAR" />
+    <result column="NODE_NAME" property="nodeName" jdbcType="VARCHAR" />
+    <result column="NODE_PREVIOUS" property="nodePrevious" jdbcType="VARCHAR" />
+    <result column="NODE_NEXT" property="nodeNext" jdbcType="VARCHAR" />
+    <result column="REVIEW_NAME" property="reviewName" jdbcType="VARCHAR" />
+    <result column="REVIEW_ID" property="reviewId" jdbcType="VARCHAR" />
+    <result column="REVIEW_TIME" property="reviewTime" jdbcType="TIMESTAMP" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="REMARK" property="remark" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    FLOW_ID, FLOW_NAME, FLOW_TYPE, NODE_NAME, NODE_PREVIOUS, NODE_NEXT, REVIEW_NAME, 
+    REVIEW_ID, REVIEW_TIME, STATE, REMARK
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.SpecialInfoExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TJ_SPECIAL_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TJ_SPECIAL_INFO
+    where FLOW_ID = #{flowId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TJ_SPECIAL_INFO
+    where FLOW_ID = #{flowId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.SpecialInfoExample" >
+    delete from TJ_SPECIAL_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.SpecialInfo" >
+    insert into TJ_SPECIAL_INFO (FLOW_ID, FLOW_NAME, FLOW_TYPE, 
+      NODE_NAME, NODE_PREVIOUS, NODE_NEXT, 
+      REVIEW_NAME, REVIEW_ID, REVIEW_TIME, 
+      STATE, REMARK)
+    values (#{flowId,jdbcType=VARCHAR}, #{flowName,jdbcType=VARCHAR}, #{flowType,jdbcType=VARCHAR}, 
+      #{nodeName,jdbcType=VARCHAR}, #{nodePrevious,jdbcType=VARCHAR}, #{nodeNext,jdbcType=VARCHAR}, 
+      #{reviewName,jdbcType=VARCHAR}, #{reviewId,jdbcType=VARCHAR}, #{reviewTime,jdbcType=TIMESTAMP}, 
+      #{state,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.SpecialInfo" >
+    insert into TJ_SPECIAL_INFO
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="flowId != null" >
+        FLOW_ID,
+      </if>
+      <if test="flowName != null" >
+        FLOW_NAME,
+      </if>
+      <if test="flowType != null" >
+        FLOW_TYPE,
+      </if>
+      <if test="nodeName != null" >
+        NODE_NAME,
+      </if>
+      <if test="nodePrevious != null" >
+        NODE_PREVIOUS,
+      </if>
+      <if test="nodeNext != null" >
+        NODE_NEXT,
+      </if>
+      <if test="reviewName != null" >
+        REVIEW_NAME,
+      </if>
+      <if test="reviewId != null" >
+        REVIEW_ID,
+      </if>
+      <if test="reviewTime != null" >
+        REVIEW_TIME,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="remark != null" >
+        REMARK,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="flowId != null" >
+        #{flowId,jdbcType=VARCHAR},
+      </if>
+      <if test="flowName != null" >
+        #{flowName,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null" >
+        #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeName != null" >
+        #{nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodePrevious != null" >
+        #{nodePrevious,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeNext != null" >
+        #{nodeNext,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewName != null" >
+        #{reviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewId != null" >
+        #{reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTime != null" >
+        #{reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.SpecialInfoExample" resultType="java.lang.Integer" >
+    select count(*) from TJ_SPECIAL_INFO
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TJ_SPECIAL_INFO
+    <set >
+      <if test="record.flowId != null" >
+        FLOW_ID = #{record.flowId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.flowName != null" >
+        FLOW_NAME = #{record.flowName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.flowType != null" >
+        FLOW_TYPE = #{record.flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodeName != null" >
+        NODE_NAME = #{record.nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodePrevious != null" >
+        NODE_PREVIOUS = #{record.nodePrevious,jdbcType=VARCHAR},
+      </if>
+      <if test="record.nodeNext != null" >
+        NODE_NEXT = #{record.nodeNext,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewName != null" >
+        REVIEW_NAME = #{record.reviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewId != null" >
+        REVIEW_ID = #{record.reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewTime != null" >
+        REVIEW_TIME = #{record.reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null" >
+        REMARK = #{record.remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TJ_SPECIAL_INFO
+    set FLOW_ID = #{record.flowId,jdbcType=VARCHAR},
+      FLOW_NAME = #{record.flowName,jdbcType=VARCHAR},
+      FLOW_TYPE = #{record.flowType,jdbcType=VARCHAR},
+      NODE_NAME = #{record.nodeName,jdbcType=VARCHAR},
+      NODE_PREVIOUS = #{record.nodePrevious,jdbcType=VARCHAR},
+      NODE_NEXT = #{record.nodeNext,jdbcType=VARCHAR},
+      REVIEW_NAME = #{record.reviewName,jdbcType=VARCHAR},
+      REVIEW_ID = #{record.reviewId,jdbcType=VARCHAR},
+      REVIEW_TIME = #{record.reviewTime,jdbcType=TIMESTAMP},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      REMARK = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.SpecialInfo" >
+    update TJ_SPECIAL_INFO
+    <set >
+      <if test="flowName != null" >
+        FLOW_NAME = #{flowName,jdbcType=VARCHAR},
+      </if>
+      <if test="flowType != null" >
+        FLOW_TYPE = #{flowType,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeName != null" >
+        NODE_NAME = #{nodeName,jdbcType=VARCHAR},
+      </if>
+      <if test="nodePrevious != null" >
+        NODE_PREVIOUS = #{nodePrevious,jdbcType=VARCHAR},
+      </if>
+      <if test="nodeNext != null" >
+        NODE_NEXT = #{nodeNext,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewName != null" >
+        REVIEW_NAME = #{reviewName,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewId != null" >
+        REVIEW_ID = #{reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewTime != null" >
+        REVIEW_TIME = #{reviewTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null" >
+        REMARK = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where FLOW_ID = #{flowId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.SpecialInfo" >
+    update TJ_SPECIAL_INFO
+    set FLOW_NAME = #{flowName,jdbcType=VARCHAR},
+      FLOW_TYPE = #{flowType,jdbcType=VARCHAR},
+      NODE_NAME = #{nodeName,jdbcType=VARCHAR},
+      NODE_PREVIOUS = #{nodePrevious,jdbcType=VARCHAR},
+      NODE_NEXT = #{nodeNext,jdbcType=VARCHAR},
+      REVIEW_NAME = #{reviewName,jdbcType=VARCHAR},
+      REVIEW_ID = #{reviewId,jdbcType=VARCHAR},
+      REVIEW_TIME = #{reviewTime,jdbcType=TIMESTAMP},
+      STATE = #{state,jdbcType=VARCHAR},
+      REMARK = #{remark,jdbcType=VARCHAR}
+    where FLOW_ID = #{flowId,jdbcType=VARCHAR}
+  </update>
+</mapper>
