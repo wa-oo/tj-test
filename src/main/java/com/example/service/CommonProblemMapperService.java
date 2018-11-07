@@ -16,14 +16,21 @@ public interface CommonProblemMapperService {
 
     int deleteByExample(CommonProblemExample example);
 
+    int deleteByPrimaryKey(Integer id);
+
     int insert(CommonProblem record);
 
     int insertSelective(CommonProblem record);
 
     List<CommonProblem> selectByExample(CommonProblemExample example);
 
+    CommonProblem selectByPrimaryKey(Integer id);
+
     int updateByExampleSelective(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
     int updateByExample(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
+    int updateByPrimaryKeySelective(CommonProblem record);
+
+    int updateByPrimaryKey(CommonProblem record);
 }

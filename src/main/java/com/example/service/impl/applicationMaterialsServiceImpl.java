@@ -1,54 +1,74 @@
 package com.example.service.impl;
 
-import com.example.mapper.applicationMaterialsMapper;
-import com.example.model.applicationMaterials;
-import com.example.model.applicationMaterialsExample;
-import com.example.service.applicationMaterialsService;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.example.mapper.ApplicationMaterialsMapper;
+import com.example.model.ApplicationMaterials;
+import com.example.model.ApplicationMaterialsExample;
+import com.example.service.ApplicationMaterialsService;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/6
  */
-public class applicationMaterialsServiceImpl implements applicationMaterialsService {
+public class ApplicationMaterialsServiceImpl implements ApplicationMaterialsService {
 
-    @Autowired
-    applicationMaterialsMapper applicationMaterialsMapper;
+    @Resource
+    private ApplicationMaterialsMapper applicationMaterialsMapper;
 
     @Override
-    public int countByExample(applicationMaterialsExample example) {
+    public int countByExample(ApplicationMaterialsExample example) {
         return applicationMaterialsMapper.countByExample(example);
     }
 
     @Override
-    public int deleteByExample(applicationMaterialsExample example) {
+    public int deleteByExample(ApplicationMaterialsExample example) {
         return applicationMaterialsMapper.deleteByExample(example);
     }
 
     @Override
-    public int insert(applicationMaterials record) {
+    public int deleteByPrimaryKey(Integer id) {
+        return applicationMaterialsMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(ApplicationMaterials record) {
         return applicationMaterialsMapper.insert(record);
     }
 
     @Override
-    public int insertSelective(applicationMaterials record) {
+    public int insertSelective(ApplicationMaterials record) {
         return applicationMaterialsMapper.insertSelective(record);
     }
 
     @Override
-    public List<applicationMaterials> selectByExample(applicationMaterialsExample example) {
+    public List<ApplicationMaterials> selectByExample(ApplicationMaterialsExample example) {
         return applicationMaterialsMapper.selectByExample(example);
     }
 
     @Override
-    public int updateByExampleSelective(applicationMaterials record, applicationMaterialsExample example) {
+    public ApplicationMaterials selectByPrimaryKey(Integer id) {
+        return applicationMaterialsMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByExampleSelective(ApplicationMaterials record, ApplicationMaterialsExample example) {
         return applicationMaterialsMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(applicationMaterials record, applicationMaterialsExample example) {
+    public int updateByExample(ApplicationMaterials record, ApplicationMaterialsExample example) {
         return applicationMaterialsMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(ApplicationMaterials record) {
+        return applicationMaterialsMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateByPrimaryKey(ApplicationMaterials record) {
+        return applicationMaterialsMapper.updateByPrimaryKey(record);
     }
 }

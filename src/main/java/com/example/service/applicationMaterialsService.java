@@ -1,7 +1,7 @@
 package com.example.service;
 
-import com.example.model.applicationMaterials;
-import com.example.model.applicationMaterialsExample;
+import com.example.model.ApplicationMaterials;
+import com.example.model.ApplicationMaterialsExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -10,20 +10,27 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/6
  */
-public interface applicationMaterialsService {
+public interface ApplicationMaterialsService {
 
-    int countByExample(applicationMaterialsExample example);
+    int countByExample(ApplicationMaterialsExample example);
 
-    int deleteByExample(applicationMaterialsExample example);
+    int deleteByExample(ApplicationMaterialsExample example);
 
-    int insert(applicationMaterials record);
+    int deleteByPrimaryKey(Integer id);
 
-    int insertSelective(applicationMaterials record);
+    int insert(ApplicationMaterials record);
 
-    List<applicationMaterials> selectByExample(applicationMaterialsExample example);
+    int insertSelective(ApplicationMaterials record);
 
-    int updateByExampleSelective(@Param("record") applicationMaterials record, @Param("example") applicationMaterialsExample example);
+    List<ApplicationMaterials> selectByExample(ApplicationMaterialsExample example);
 
-    int updateByExample(@Param("record") applicationMaterials record, @Param("example") applicationMaterialsExample example);
+    ApplicationMaterials selectByPrimaryKey(Integer id);
 
+    int updateByExampleSelective(@Param("record") ApplicationMaterials record, @Param("example") ApplicationMaterialsExample example);
+
+    int updateByExample(@Param("record") ApplicationMaterials record, @Param("example") ApplicationMaterialsExample example);
+
+    int updateByPrimaryKeySelective(ApplicationMaterials record);
+
+    int updateByPrimaryKey(ApplicationMaterials record);
 }

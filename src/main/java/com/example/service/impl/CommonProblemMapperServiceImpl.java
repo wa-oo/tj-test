@@ -1,11 +1,11 @@
 package com.example.service.impl;
 
-import com.example.mapper.commonProblemMapper;
-import com.example.model.commonProblem;
-import com.example.model.commonProblemExample;
+import com.example.mapper.CommonProblemMapper;
+import com.example.model.CommonProblem;
+import com.example.model.CommonProblemExample;
 import com.example.service.CommonProblemMapperService;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,41 +14,61 @@ import java.util.List;
  */
 public class CommonProblemMapperServiceImpl implements CommonProblemMapperService {
 
-    @Autowired
-    private commonProblemMapper commonProblemMapper;
+    @Resource
+    private CommonProblemMapper commonProblemMapper;
 
     @Override
-    public int countByExample(commonProblemExample example) {
+    public int countByExample(CommonProblemExample example) {
         return commonProblemMapper.countByExample(example);
     }
 
     @Override
-    public int deleteByExample(commonProblemExample example) {
+    public int deleteByExample(CommonProblemExample example) {
         return commonProblemMapper.deleteByExample(example);
     }
 
     @Override
-    public int insert(commonProblem record) {
+    public int deleteByPrimaryKey(Integer id) {
+        return commonProblemMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(CommonProblem record) {
         return commonProblemMapper.insert(record);
     }
 
     @Override
-    public int insertSelective(commonProblem record) {
+    public int insertSelective(CommonProblem record) {
         return commonProblemMapper.insertSelective(record);
     }
 
     @Override
-    public List<commonProblem> selectByExample(commonProblemExample example) {
+    public List<CommonProblem> selectByExample(CommonProblemExample example) {
         return commonProblemMapper.selectByExample(example);
     }
 
     @Override
-    public int updateByExampleSelective(commonProblem record, commonProblemExample example) {
+    public CommonProblem selectByPrimaryKey(Integer id) {
+        return commonProblemMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByExampleSelective(CommonProblem record, CommonProblemExample example) {
         return commonProblemMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(commonProblem record, commonProblemExample example) {
+    public int updateByExample(CommonProblem record, CommonProblemExample example) {
         return commonProblemMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(CommonProblem record) {
+        return commonProblemMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateByPrimaryKey(CommonProblem record) {
+        return commonProblemMapper.updateByPrimaryKey(record);
     }
 }
