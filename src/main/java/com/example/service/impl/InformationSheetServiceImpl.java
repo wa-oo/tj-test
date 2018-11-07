@@ -1,11 +1,11 @@
 package com.example.service.impl;
 
-import com.example.mapper.informationSheetMapper;
-import com.example.model.informationSheet;
-import com.example.model.informationSheetExample;
+import com.example.mapper.InformationSheetMapper;
+import com.example.model.InformationSheet;
+import com.example.model.InformationSheetExample;
 import com.example.service.InformationSheetService;
-import org.springframework.beans.factory.annotation.Autowired;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -14,41 +14,61 @@ import java.util.List;
  */
 public class InformationSheetServiceImpl implements InformationSheetService {
 
-    @Autowired
-    private informationSheetMapper informationSheetMapper;
+    @Resource
+    private InformationSheetMapper informationSheetMapper;
 
     @Override
-    public int countByExample(informationSheetExample example) {
+    public int countByExample(InformationSheetExample example) {
         return informationSheetMapper.countByExample(example);
     }
 
     @Override
-    public int deleteByExample(informationSheetExample example) {
+    public int deleteByExample(InformationSheetExample example) {
         return informationSheetMapper.deleteByExample(example);
     }
 
     @Override
-    public int insert(informationSheet record) {
+    public int deleteByPrimaryKey(Integer id) {
+        return informationSheetMapper.deleteByPrimaryKey(id);
+    }
+
+    @Override
+    public int insert(InformationSheet record) {
         return informationSheetMapper.insert(record);
     }
 
     @Override
-    public int insertSelective(informationSheet record) {
+    public int insertSelective(InformationSheet record) {
         return informationSheetMapper.insertSelective(record);
     }
 
     @Override
-    public List<informationSheet> selectByExample(informationSheetExample example) {
+    public List<InformationSheet> selectByExample(InformationSheetExample example) {
         return informationSheetMapper.selectByExample(example);
     }
 
     @Override
-    public int updateByExampleSelective(informationSheet record, informationSheetExample example) {
+    public InformationSheet selectByPrimaryKey(Integer id) {
+        return informationSheetMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public int updateByExampleSelective(InformationSheet record, InformationSheetExample example) {
         return informationSheetMapper.updateByExampleSelective(record, example);
     }
 
     @Override
-    public int updateByExample(informationSheet record, informationSheetExample example) {
+    public int updateByExample(InformationSheet record, InformationSheetExample example) {
         return informationSheetMapper.updateByExample(record, example);
+    }
+
+    @Override
+    public int updateByPrimaryKeySelective(InformationSheet record) {
+        return informationSheetMapper.updateByPrimaryKeySelective(record);
+    }
+
+    @Override
+    public int updateByPrimaryKey(InformationSheet record) {
+        return informationSheetMapper.updateByPrimaryKey(record);
     }
 }
