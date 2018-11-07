@@ -1,7 +1,7 @@
 package com.example.service;
 
-import com.example.model.commonProblem;
-import com.example.model.commonProblemExample;
+import com.example.model.CommonProblem;
+import com.example.model.CommonProblemExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,18 +12,18 @@ import java.util.List;
  */
 public interface CommonProblemMapperService {
 
-    int countByExample(commonProblemExample example);
+    int countByExample(CommonProblemExample example);
 
-    int deleteByExample(commonProblemExample example);
+    int deleteByExample(CommonProblemExample example);
 
-    int insert(commonProblem record);
+    int insert(CommonProblem record);
 
-    int insertSelective(commonProblem record);
+    int insertSelective(CommonProblem record);
 
-    List<commonProblem> selectByExample(commonProblemExample example);
+    List<CommonProblem> selectByExample(CommonProblemExample example);
 
-    int updateByExampleSelective(@Param("record") commonProblem record, @Param("example") commonProblemExample example);
+    int updateByExampleSelective(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
-    int updateByExample(@Param("record") commonProblem record, @Param("example") commonProblemExample example);
+    int updateByExample(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
 }

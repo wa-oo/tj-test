@@ -1,7 +1,7 @@
 package com.example.service;
 
-import com.example.model.processingProcess;
-import com.example.model.processingProcessExample;
+import com.example.model.ProcessingProcess;
+import com.example.model.ProcessingProcessExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,18 +12,25 @@ import java.util.List;
  */
 public interface ProcessingProcessService {
 
-    int countByExample(processingProcessExample example);
+    int countByExample(ProcessingProcessExample example);
 
-    int deleteByExample(processingProcessExample example);
+    int deleteByExample(ProcessingProcessExample example);
 
-    int insert(processingProcess record);
+    int deleteByPrimaryKey(Integer id);
 
-    int insertSelective(processingProcess record);
+    int insert(ProcessingProcess record);
 
-    List<processingProcess> selectByExample(processingProcessExample example);
+    int insertSelective(ProcessingProcess record);
 
-    int updateByExampleSelective(@Param("record") processingProcess record, @Param("example") processingProcessExample example);
+    List<ProcessingProcess> selectByExample(ProcessingProcessExample example);
 
-    int updateByExample(@Param("record") processingProcess record, @Param("example") processingProcessExample example);
+    ProcessingProcess selectByPrimaryKey(Integer id);
 
+    int updateByExampleSelective(@Param("record") ProcessingProcess record, @Param("example") ProcessingProcessExample example);
+
+    int updateByExample(@Param("record") ProcessingProcess record, @Param("example") ProcessingProcessExample example);
+
+    int updateByPrimaryKeySelective(ProcessingProcess record);
+
+    int updateByPrimaryKey(ProcessingProcess record);
 }

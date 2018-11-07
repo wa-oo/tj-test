@@ -1,7 +1,7 @@
 package com.example.service;
 
-import com.example.model.informationSheet;
-import com.example.model.informationSheetExample;
+import com.example.model.InformationSheet;
+import com.example.model.InformationSheetExample;
 import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
@@ -12,18 +12,25 @@ import java.util.List;
  */
 public interface InformationSheetService {
 
-    int countByExample(informationSheetExample example);
+    int countByExample(InformationSheetExample example);
 
-    int deleteByExample(informationSheetExample example);
+    int deleteByExample(InformationSheetExample example);
 
-    int insert(informationSheet record);
+    int deleteByPrimaryKey(Integer id);
 
-    int insertSelective(informationSheet record);
+    int insert(InformationSheet record);
 
-    List<informationSheet> selectByExample(informationSheetExample example);
+    int insertSelective(InformationSheet record);
 
-    int updateByExampleSelective(@Param("record") informationSheet record, @Param("example") informationSheetExample example);
+    List<InformationSheet> selectByExample(InformationSheetExample example);
 
-    int updateByExample(@Param("record") informationSheet record, @Param("example") informationSheetExample example);
+    InformationSheet selectByPrimaryKey(Integer id);
 
+    int updateByExampleSelective(@Param("record") InformationSheet record, @Param("example") InformationSheetExample example);
+
+    int updateByExample(@Param("record") InformationSheet record, @Param("example") InformationSheetExample example);
+
+    int updateByPrimaryKeySelective(InformationSheet record);
+
+    int updateByPrimaryKey(InformationSheet record);
 }
