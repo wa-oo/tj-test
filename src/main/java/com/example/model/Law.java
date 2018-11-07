@@ -3,6 +3,7 @@ package com.example.model;
 import java.util.Date;
 
 public class Law {
+
     private String id;
 
     private String matterId;
