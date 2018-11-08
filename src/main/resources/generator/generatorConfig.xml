@@ -54,32 +54,32 @@
                <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
                <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
         <!---->
-        <table tableName="TJ_BASE_PERMISSION_ITEM" domainObjectName="BasePermissionItem" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_COMMON_QUESTION" domainObjectName="CommonQuestion" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <!--<table tableName="TJ_BASE_PERMISSION_ITEM" domainObjectName="BasePermissionItem" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <!--<table tableName="TJ_COMMON_QUESTION" domainObjectName="CommonQuestion" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
         <table tableName="TJ_DEPT_INFO" domainObjectName="DeptInfo" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_LAW" domainObjectName="Law" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_MATERIAL_ITEM" domainObjectName="MaterialItem" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_MENU_INFORMATION" domainObjectName="MenuInformation" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_MENU_SUBJECT" domainObjectName="MenuSubject" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <!--<table tableName="TJ_LAW" domainObjectName="Law" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <!--<table tableName="TJ_MATERIAL_ITEM" domainObjectName="MaterialItem" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <!--<table tableName="TJ_MENU_INFORMATION" domainObjectName="MenuInformation" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <!--<table tableName="TJ_MENU_SUBJECT" domainObjectName="MenuSubject" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
         <table tableName="TJ_REGION_INFO" domainObjectName="RegionInfo" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <table tableName="TJ_SPECIAL_INFO" domainObjectName="SpecialInfo" enableCountByExample="true"
-               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
-               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <!--<table tableName="TJ_SPECIAL_INFO" domainObjectName="SpecialInfo" enableCountByExample="true"-->
+               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
+               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
     </context>
 </generatorConfiguration>

@@ -4,6 +4,8 @@ import com.example.mapper.ProcessingProcessMapper;
 import com.example.model.ProcessingProcess;
 import com.example.model.ProcessingProcessExample;
 import com.example.service.ProcessingProcessService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+
 public class ProcessingProcessServiceImpl implements ProcessingProcessService {
 
     @Resource

@@ -3,6 +3,8 @@ package com.example.service;
 import com.example.model.ProcessingProcess;
 import com.example.model.ProcessingProcessExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -10,6 +12,8 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+@Service
+@Transactional
 public interface ProcessingProcessService {
 
     int countByExample(ProcessingProcessExample example);

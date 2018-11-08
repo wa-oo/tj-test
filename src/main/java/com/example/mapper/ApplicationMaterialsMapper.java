@@ -2,10 +2,15 @@ package com.example.mapper;
 
 import com.example.model.ApplicationMaterials;
 import com.example.model.ApplicationMaterialsExample;
+
 import java.util.List;
+
+import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
+@Mapper
 public interface ApplicationMaterialsMapper {
+
     int countByExample(ApplicationMaterialsExample example);
 
     int deleteByExample(ApplicationMaterialsExample example);

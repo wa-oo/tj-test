@@ -6,6 +6,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
 public interface BasePermissionItemMapper {
+
     int countByExample(BasePermissionItemExample example);
 
     int deleteByExample(BasePermissionItemExample example);

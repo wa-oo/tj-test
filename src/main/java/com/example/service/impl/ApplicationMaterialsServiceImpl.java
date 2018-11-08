@@ -4,6 +4,9 @@ import com.example.mapper.ApplicationMaterialsMapper;
 import com.example.model.ApplicationMaterials;
 import com.example.model.ApplicationMaterialsExample;
 import com.example.service.ApplicationMaterialsService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,6 +15,7 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+@Service(value = "ApplicationMaterialsService")
 public class ApplicationMaterialsServiceImpl implements ApplicationMaterialsService {
 
     @Resource

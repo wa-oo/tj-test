@@ -4,6 +4,8 @@ import com.example.mapper.CommonProblemMapper;
 import com.example.model.CommonProblem;
 import com.example.model.CommonProblemExample;
 import com.example.service.CommonProblemMapperService;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+
 public class CommonProblemMapperServiceImpl implements CommonProblemMapperService {
 
     @Resource

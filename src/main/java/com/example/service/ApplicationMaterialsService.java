@@ -3,6 +3,7 @@ package com.example.service;
 import com.example.model.ApplicationMaterials;
 import com.example.model.ApplicationMaterialsExample;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+@Service
 public interface ApplicationMaterialsService {
     int countByExample(ApplicationMaterialsExample example);
 

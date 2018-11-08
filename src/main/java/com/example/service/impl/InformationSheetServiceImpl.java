@@ -4,6 +4,8 @@ import com.example.mapper.InformationSheetMapper;
 import com.example.model.InformationSheet;
 import com.example.model.InformationSheetExample;
 import com.example.service.InformationSheetService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
@@ -12,6 +14,7 @@ import java.util.List;
  * @author wangtaog@mail.taiji.com.cn
  * @date 2018/11/7
  */
+@Service(value = "InformationSheetService")
 public class InformationSheetServiceImpl implements InformationSheetService {
 
     @Resource

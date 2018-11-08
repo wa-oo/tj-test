@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <typeAliases>
+    </typeAliases>
+    <mappers>
+        <mapper resource="com/example/mapper/sql/ApplicationMaterialsMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/BasePermissionItemMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/CommonProblemMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/InformationSheetMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/CommonQuestionMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/LawMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/MaterialItemMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/MenuInformationMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/MenuSubjectMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/ProcessingProcessMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/SpecialInfoMapper.xml"/>
+    </mappers>
+</configuration>

@@ -6,10 +6,27 @@ spring:
     #druid配置
     druid:
       driver-class-name: com.mysql.jdbc.Driver
-      url: jdbc:mysql://127.0.0.1:3306/plan?useUnicode=true&characterEncoding=UTF-8&nullCatalogMeansCurrent=true
+      url: jdbc:mysql://127.0.0.1:3306/plan?useUnicode=true&characterEncoding=UTF-8&nullCatalogMeansCurrent=true&useSSL=false
       username: root
       password: root
 
+#  thymeleaf配置
+  thymeleaf:
+    cache: false
+    servlet:
+      content-type: text/html
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    prefix: classpath:/templates/
+    suffix: .html
+
 mybatis:
-  config-location: classpath:mapper/*.xml
+  config-location: classpath:mybatis-config.xml
   type-aliases-package: com.example.model
+  mapper-locations: classpath:mapper/sql/*xml
+
+# 端口号
+server:
+  port: 8080
+  servlet:
+    context-path: /test
