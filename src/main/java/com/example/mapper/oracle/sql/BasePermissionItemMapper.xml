@@ -1,0 +1,895 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.oracle.BasePermissionItemMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.oracle.BasePermissionItem" >
+    <id column="MATTER_ID" property="matterId" jdbcType="VARCHAR" />
+    <result column="IMPLEMENT_ID" property="implementId" jdbcType="VARCHAR" />
+    <result column="MATTER_NAME" property="matterName" jdbcType="VARCHAR" />
+    <result column="HANDLE_TIME" property="handleTime" jdbcType="TIMESTAMP" />
+    <result column="MATTER_TYPE" property="matterType" jdbcType="VARCHAR" />
+    <result column="HANDLE_ITEMS" property="handleItems" jdbcType="VARCHAR" />
+    <result column="REVIEW_ID" property="reviewId" jdbcType="VARCHAR" />
+    <result column="IMPLEMENT_LEVEL" property="implementLevel" jdbcType="VARCHAR" />
+    <result column="IS_EMERGENCY" property="isEmergency" jdbcType="VARCHAR" />
+    <result column="HANDLE_DEPT" property="handleDept" jdbcType="VARCHAR" />
+    <result column="CONSULT_CALL" property="consultCall" jdbcType="VARCHAR" />
+    <result column="SUPERVISION_CALL" property="supervisionCall" jdbcType="VARCHAR" />
+    <result column="HANDLE_LOCATION" property="handleLocation" jdbcType="VARCHAR" />
+    <result column="HANDLE_AREA" property="handleArea" jdbcType="VARCHAR" />
+    <result column="HANDLETIME_PROMISE" property="handletimePromise" jdbcType="TIMESTAMP" />
+    <result column="HANDLETIME_LIMIT" property="handletimeLimit" jdbcType="TIMESTAMP" />
+    <result column="VALIDITY_PERIOD" property="validityPeriod" jdbcType="TIMESTAMP" />
+    <result column="AVAILABLE_AREA" property="availableArea" jdbcType="VARCHAR" />
+    <result column="IS_APPOINTMENT_REVIEW" property="isAppointmentReview" jdbcType="VARCHAR" />
+    <result column="APPOINTMENT_REVIEW_CALL" property="appointmentReviewCall" jdbcType="VARCHAR" />
+    <result column="HANDLE_COUNT" property="handleCount" jdbcType="VARCHAR" />
+    <result column="POWER_SOURCE" property="powerSource" jdbcType="VARCHAR" />
+    <result column="IS_SPECIAL" property="isSpecial" jdbcType="VARCHAR" />
+    <result column="ACCEPT_TIME" property="acceptTime" jdbcType="TIMESTAMP" />
+    <result column="ISHANDLE_ONLINE" property="ishandleOnline" jdbcType="VARCHAR" />
+    <result column="ISHANDLE_CLOSE" property="ishandleClose" jdbcType="VARCHAR" />
+    <result column="ISREVIEW_AUTO" property="isreviewAuto" jdbcType="VARCHAR" />
+    <result column="ISREVIEW_PROMISE" property="isreviewPromise" jdbcType="VARCHAR" />
+    <result column="ISHANDLE_AGENT" property="ishandleAgent" jdbcType="VARCHAR" />
+    <result column="ISHANDLE_ALLAREA" property="ishandleAllarea" jdbcType="VARCHAR" />
+    <result column="SHOWFILE" property="showfile" jdbcType="VARCHAR" />
+    <result column="ISREVIEW_PAID" property="isreviewPaid" jdbcType="VARCHAR" />
+    <result column="IMPLEMENT_POWER" property="implementPower" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="MATTER_SUBNAME" property="matterSubname" jdbcType="VARCHAR" />
+    <result column="MATTER_PROPERTIES" property="matterProperties" jdbcType="VARCHAR" />
+    <result column="MATTER_STAGENAME" property="matterStagename" jdbcType="VARCHAR" />
+    <result column="CHARGE_ID" property="chargeId" jdbcType="VARCHAR" />
+    <result column="REVIEW_TYPE" property="reviewType" jdbcType="VARCHAR" />
+    <result column="REVIEW_ACCEPT_ORG" property="reviewAcceptOrg" jdbcType="VARCHAR" />
+    <result column="REVIEW_ACCEPT_LOCATION" property="reviewAcceptLocation" jdbcType="VARCHAR" />
+    <result column="ONLINE_HANDLE_PROCESS" property="onlineHandleProcess" jdbcType="VARCHAR" />
+    <result column="OPERATION_FILE_ID" property="operationFileId" jdbcType="VARCHAR" />
+    <result column="OPERATION_FILE_NAME" property="operationFileName" jdbcType="VARCHAR" />
+    <result column="PROCESS_ID" property="processId" jdbcType="VARCHAR" />
+    <result column="PROCESS_NAME" property="processName" jdbcType="VARCHAR" />
+    <result column="RELOCATION" property="relocation" jdbcType="VARCHAR" />
+    <result column="QUESTION_ID" property="questionId" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    MATTER_ID, IMPLEMENT_ID, MATTER_NAME, HANDLE_TIME, MATTER_TYPE, HANDLE_ITEMS, REVIEW_ID, 
+    IMPLEMENT_LEVEL, IS_EMERGENCY, HANDLE_DEPT, CONSULT_CALL, SUPERVISION_CALL, HANDLE_LOCATION, 
+    HANDLE_AREA, HANDLETIME_PROMISE, HANDLETIME_LIMIT, VALIDITY_PERIOD, AVAILABLE_AREA, 
+    IS_APPOINTMENT_REVIEW, APPOINTMENT_REVIEW_CALL, HANDLE_COUNT, POWER_SOURCE, IS_SPECIAL, 
+    ACCEPT_TIME, ISHANDLE_ONLINE, ISHANDLE_CLOSE, ISREVIEW_AUTO, ISREVIEW_PROMISE, ISHANDLE_AGENT, 
+    ISHANDLE_ALLAREA, SHOWFILE, ISREVIEW_PAID, IMPLEMENT_POWER, STATE, MATTER_SUBNAME, 
+    MATTER_PROPERTIES, MATTER_STAGENAME, CHARGE_ID, REVIEW_TYPE, REVIEW_ACCEPT_ORG, REVIEW_ACCEPT_LOCATION, 
+    ONLINE_HANDLE_PROCESS, OPERATION_FILE_ID, OPERATION_FILE_NAME, PROCESS_ID, PROCESS_NAME, 
+    RELOCATION, QUESTION_ID
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.oracle.BasePermissionItemExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TJ_BASE_PERMISSION_ITEM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TJ_BASE_PERMISSION_ITEM
+    where MATTER_ID = #{matterId,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TJ_BASE_PERMISSION_ITEM
+    where MATTER_ID = #{matterId,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.oracle.BasePermissionItemExample" >
+    delete from TJ_BASE_PERMISSION_ITEM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.oracle.BasePermissionItem" >
+    insert into TJ_BASE_PERMISSION_ITEM (MATTER_ID, IMPLEMENT_ID, MATTER_NAME, 
+      HANDLE_TIME, MATTER_TYPE, HANDLE_ITEMS, 
+      REVIEW_ID, IMPLEMENT_LEVEL, IS_EMERGENCY, 
+      HANDLE_DEPT, CONSULT_CALL, SUPERVISION_CALL, 
+      HANDLE_LOCATION, HANDLE_AREA, HANDLETIME_PROMISE, 
+      HANDLETIME_LIMIT, VALIDITY_PERIOD, AVAILABLE_AREA, 
+      IS_APPOINTMENT_REVIEW, APPOINTMENT_REVIEW_CALL, 
+      HANDLE_COUNT, POWER_SOURCE, IS_SPECIAL, 
+      ACCEPT_TIME, ISHANDLE_ONLINE, ISHANDLE_CLOSE, 
+      ISREVIEW_AUTO, ISREVIEW_PROMISE, ISHANDLE_AGENT, 
+      ISHANDLE_ALLAREA, SHOWFILE, ISREVIEW_PAID, 
+      IMPLEMENT_POWER, STATE, MATTER_SUBNAME, 
+      MATTER_PROPERTIES, MATTER_STAGENAME, CHARGE_ID, 
+      REVIEW_TYPE, REVIEW_ACCEPT_ORG, REVIEW_ACCEPT_LOCATION, 
+      ONLINE_HANDLE_PROCESS, OPERATION_FILE_ID, OPERATION_FILE_NAME, 
+      PROCESS_ID, PROCESS_NAME, RELOCATION, 
+      QUESTION_ID)
+    values (#{matterId,jdbcType=VARCHAR}, #{implementId,jdbcType=VARCHAR}, #{matterName,jdbcType=VARCHAR}, 
+      #{handleTime,jdbcType=TIMESTAMP}, #{matterType,jdbcType=VARCHAR}, #{handleItems,jdbcType=VARCHAR}, 
+      #{reviewId,jdbcType=VARCHAR}, #{implementLevel,jdbcType=VARCHAR}, #{isEmergency,jdbcType=VARCHAR}, 
+      #{handleDept,jdbcType=VARCHAR}, #{consultCall,jdbcType=VARCHAR}, #{supervisionCall,jdbcType=VARCHAR}, 
+      #{handleLocation,jdbcType=VARCHAR}, #{handleArea,jdbcType=VARCHAR}, #{handletimePromise,jdbcType=TIMESTAMP}, 
+      #{handletimeLimit,jdbcType=TIMESTAMP}, #{validityPeriod,jdbcType=TIMESTAMP}, #{availableArea,jdbcType=VARCHAR}, 
+      #{isAppointmentReview,jdbcType=VARCHAR}, #{appointmentReviewCall,jdbcType=VARCHAR}, 
+      #{handleCount,jdbcType=VARCHAR}, #{powerSource,jdbcType=VARCHAR}, #{isSpecial,jdbcType=VARCHAR}, 
+      #{acceptTime,jdbcType=TIMESTAMP}, #{ishandleOnline,jdbcType=VARCHAR}, #{ishandleClose,jdbcType=VARCHAR}, 
+      #{isreviewAuto,jdbcType=VARCHAR}, #{isreviewPromise,jdbcType=VARCHAR}, #{ishandleAgent,jdbcType=VARCHAR}, 
+      #{ishandleAllarea,jdbcType=VARCHAR}, #{showfile,jdbcType=VARCHAR}, #{isreviewPaid,jdbcType=VARCHAR}, 
+      #{implementPower,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{matterSubname,jdbcType=VARCHAR}, 
+      #{matterProperties,jdbcType=VARCHAR}, #{matterStagename,jdbcType=VARCHAR}, #{chargeId,jdbcType=VARCHAR}, 
+      #{reviewType,jdbcType=VARCHAR}, #{reviewAcceptOrg,jdbcType=VARCHAR}, #{reviewAcceptLocation,jdbcType=VARCHAR}, 
+      #{onlineHandleProcess,jdbcType=VARCHAR}, #{operationFileId,jdbcType=VARCHAR}, #{operationFileName,jdbcType=VARCHAR}, 
+      #{processId,jdbcType=VARCHAR}, #{processName,jdbcType=VARCHAR}, #{relocation,jdbcType=VARCHAR}, 
+      #{questionId,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.oracle.BasePermissionItem" >
+    insert into TJ_BASE_PERMISSION_ITEM
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="matterId != null" >
+        MATTER_ID,
+      </if>
+      <if test="implementId != null" >
+        IMPLEMENT_ID,
+      </if>
+      <if test="matterName != null" >
+        MATTER_NAME,
+      </if>
+      <if test="handleTime != null" >
+        HANDLE_TIME,
+      </if>
+      <if test="matterType != null" >
+        MATTER_TYPE,
+      </if>
+      <if test="handleItems != null" >
+        HANDLE_ITEMS,
+      </if>
+      <if test="reviewId != null" >
+        REVIEW_ID,
+      </if>
+      <if test="implementLevel != null" >
+        IMPLEMENT_LEVEL,
+      </if>
+      <if test="isEmergency != null" >
+        IS_EMERGENCY,
+      </if>
+      <if test="handleDept != null" >
+        HANDLE_DEPT,
+      </if>
+      <if test="consultCall != null" >
+        CONSULT_CALL,
+      </if>
+      <if test="supervisionCall != null" >
+        SUPERVISION_CALL,
+      </if>
+      <if test="handleLocation != null" >
+        HANDLE_LOCATION,
+      </if>
+      <if test="handleArea != null" >
+        HANDLE_AREA,
+      </if>
+      <if test="handletimePromise != null" >
+        HANDLETIME_PROMISE,
+      </if>
+      <if test="handletimeLimit != null" >
+        HANDLETIME_LIMIT,
+      </if>
+      <if test="validityPeriod != null" >
+        VALIDITY_PERIOD,
+      </if>
+      <if test="availableArea != null" >
+        AVAILABLE_AREA,
+      </if>
+      <if test="isAppointmentReview != null" >
+        IS_APPOINTMENT_REVIEW,
+      </if>
+      <if test="appointmentReviewCall != null" >
+        APPOINTMENT_REVIEW_CALL,
+      </if>
+      <if test="handleCount != null" >
+        HANDLE_COUNT,
+      </if>
+      <if test="powerSource != null" >
+        POWER_SOURCE,
+      </if>
+      <if test="isSpecial != null" >
+        IS_SPECIAL,
+      </if>
+      <if test="acceptTime != null" >
+        ACCEPT_TIME,
+      </if>
+      <if test="ishandleOnline != null" >
+        ISHANDLE_ONLINE,
+      </if>
+      <if test="ishandleClose != null" >
+        ISHANDLE_CLOSE,
+      </if>
+      <if test="isreviewAuto != null" >
+        ISREVIEW_AUTO,
+      </if>
+      <if test="isreviewPromise != null" >
+        ISREVIEW_PROMISE,
+      </if>
+      <if test="ishandleAgent != null" >
+        ISHANDLE_AGENT,
+      </if>
+      <if test="ishandleAllarea != null" >
+        ISHANDLE_ALLAREA,
+      </if>
+      <if test="showfile != null" >
+        SHOWFILE,
+      </if>
+      <if test="isreviewPaid != null" >
+        ISREVIEW_PAID,
+      </if>
+      <if test="implementPower != null" >
+        IMPLEMENT_POWER,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="matterSubname != null" >
+        MATTER_SUBNAME,
+      </if>
+      <if test="matterProperties != null" >
+        MATTER_PROPERTIES,
+      </if>
+      <if test="matterStagename != null" >
+        MATTER_STAGENAME,
+      </if>
+      <if test="chargeId != null" >
+        CHARGE_ID,
+      </if>
+      <if test="reviewType != null" >
+        REVIEW_TYPE,
+      </if>
+      <if test="reviewAcceptOrg != null" >
+        REVIEW_ACCEPT_ORG,
+      </if>
+      <if test="reviewAcceptLocation != null" >
+        REVIEW_ACCEPT_LOCATION,
+      </if>
+      <if test="onlineHandleProcess != null" >
+        ONLINE_HANDLE_PROCESS,
+      </if>
+      <if test="operationFileId != null" >
+        OPERATION_FILE_ID,
+      </if>
+      <if test="operationFileName != null" >
+        OPERATION_FILE_NAME,
+      </if>
+      <if test="processId != null" >
+        PROCESS_ID,
+      </if>
+      <if test="processName != null" >
+        PROCESS_NAME,
+      </if>
+      <if test="relocation != null" >
+        RELOCATION,
+      </if>
+      <if test="questionId != null" >
+        QUESTION_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="matterId != null" >
+        #{matterId,jdbcType=VARCHAR},
+      </if>
+      <if test="implementId != null" >
+        #{implementId,jdbcType=VARCHAR},
+      </if>
+      <if test="matterName != null" >
+        #{matterName,jdbcType=VARCHAR},
+      </if>
+      <if test="handleTime != null" >
+        #{handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="matterType != null" >
+        #{matterType,jdbcType=VARCHAR},
+      </if>
+      <if test="handleItems != null" >
+        #{handleItems,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewId != null" >
+        #{reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="implementLevel != null" >
+        #{implementLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="isEmergency != null" >
+        #{isEmergency,jdbcType=VARCHAR},
+      </if>
+      <if test="handleDept != null" >
+        #{handleDept,jdbcType=VARCHAR},
+      </if>
+      <if test="consultCall != null" >
+        #{consultCall,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisionCall != null" >
+        #{supervisionCall,jdbcType=VARCHAR},
+      </if>
+      <if test="handleLocation != null" >
+        #{handleLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="handleArea != null" >
+        #{handleArea,jdbcType=VARCHAR},
+      </if>
+      <if test="handletimePromise != null" >
+        #{handletimePromise,jdbcType=TIMESTAMP},
+      </if>
+      <if test="handletimeLimit != null" >
+        #{handletimeLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validityPeriod != null" >
+        #{validityPeriod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableArea != null" >
+        #{availableArea,jdbcType=VARCHAR},
+      </if>
+      <if test="isAppointmentReview != null" >
+        #{isAppointmentReview,jdbcType=VARCHAR},
+      </if>
+      <if test="appointmentReviewCall != null" >
+        #{appointmentReviewCall,jdbcType=VARCHAR},
+      </if>
+      <if test="handleCount != null" >
+        #{handleCount,jdbcType=VARCHAR},
+      </if>
+      <if test="powerSource != null" >
+        #{powerSource,jdbcType=VARCHAR},
+      </if>
+      <if test="isSpecial != null" >
+        #{isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptTime != null" >
+        #{acceptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ishandleOnline != null" >
+        #{ishandleOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleClose != null" >
+        #{ishandleClose,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewAuto != null" >
+        #{isreviewAuto,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewPromise != null" >
+        #{isreviewPromise,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleAgent != null" >
+        #{ishandleAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleAllarea != null" >
+        #{ishandleAllarea,jdbcType=VARCHAR},
+      </if>
+      <if test="showfile != null" >
+        #{showfile,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewPaid != null" >
+        #{isreviewPaid,jdbcType=VARCHAR},
+      </if>
+      <if test="implementPower != null" >
+        #{implementPower,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="matterSubname != null" >
+        #{matterSubname,jdbcType=VARCHAR},
+      </if>
+      <if test="matterProperties != null" >
+        #{matterProperties,jdbcType=VARCHAR},
+      </if>
+      <if test="matterStagename != null" >
+        #{matterStagename,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeId != null" >
+        #{chargeId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewType != null" >
+        #{reviewType,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewAcceptOrg != null" >
+        #{reviewAcceptOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewAcceptLocation != null" >
+        #{reviewAcceptLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineHandleProcess != null" >
+        #{onlineHandleProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="operationFileId != null" >
+        #{operationFileId,jdbcType=VARCHAR},
+      </if>
+      <if test="operationFileName != null" >
+        #{operationFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="processId != null" >
+        #{processId,jdbcType=VARCHAR},
+      </if>
+      <if test="processName != null" >
+        #{processName,jdbcType=VARCHAR},
+      </if>
+      <if test="relocation != null" >
+        #{relocation,jdbcType=VARCHAR},
+      </if>
+      <if test="questionId != null" >
+        #{questionId,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.oracle.BasePermissionItemExample" resultType="java.lang.Integer" >
+    select count(*) from TJ_BASE_PERMISSION_ITEM
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TJ_BASE_PERMISSION_ITEM
+    <set >
+      <if test="record.matterId != null" >
+        MATTER_ID = #{record.matterId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.implementId != null" >
+        IMPLEMENT_ID = #{record.implementId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matterName != null" >
+        MATTER_NAME = #{record.matterName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleTime != null" >
+        HANDLE_TIME = #{record.handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.matterType != null" >
+        MATTER_TYPE = #{record.matterType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleItems != null" >
+        HANDLE_ITEMS = #{record.handleItems,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewId != null" >
+        REVIEW_ID = #{record.reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.implementLevel != null" >
+        IMPLEMENT_LEVEL = #{record.implementLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isEmergency != null" >
+        IS_EMERGENCY = #{record.isEmergency,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleDept != null" >
+        HANDLE_DEPT = #{record.handleDept,jdbcType=VARCHAR},
+      </if>
+      <if test="record.consultCall != null" >
+        CONSULT_CALL = #{record.consultCall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.supervisionCall != null" >
+        SUPERVISION_CALL = #{record.supervisionCall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleLocation != null" >
+        HANDLE_LOCATION = #{record.handleLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleArea != null" >
+        HANDLE_AREA = #{record.handleArea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handletimePromise != null" >
+        HANDLETIME_PROMISE = #{record.handletimePromise,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.handletimeLimit != null" >
+        HANDLETIME_LIMIT = #{record.handletimeLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.validityPeriod != null" >
+        VALIDITY_PERIOD = #{record.validityPeriod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.availableArea != null" >
+        AVAILABLE_AREA = #{record.availableArea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isAppointmentReview != null" >
+        IS_APPOINTMENT_REVIEW = #{record.isAppointmentReview,jdbcType=VARCHAR},
+      </if>
+      <if test="record.appointmentReviewCall != null" >
+        APPOINTMENT_REVIEW_CALL = #{record.appointmentReviewCall,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handleCount != null" >
+        HANDLE_COUNT = #{record.handleCount,jdbcType=VARCHAR},
+      </if>
+      <if test="record.powerSource != null" >
+        POWER_SOURCE = #{record.powerSource,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isSpecial != null" >
+        IS_SPECIAL = #{record.isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="record.acceptTime != null" >
+        ACCEPT_TIME = #{record.acceptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.ishandleOnline != null" >
+        ISHANDLE_ONLINE = #{record.ishandleOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ishandleClose != null" >
+        ISHANDLE_CLOSE = #{record.ishandleClose,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isreviewAuto != null" >
+        ISREVIEW_AUTO = #{record.isreviewAuto,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isreviewPromise != null" >
+        ISREVIEW_PROMISE = #{record.isreviewPromise,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ishandleAgent != null" >
+        ISHANDLE_AGENT = #{record.ishandleAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="record.ishandleAllarea != null" >
+        ISHANDLE_ALLAREA = #{record.ishandleAllarea,jdbcType=VARCHAR},
+      </if>
+      <if test="record.showfile != null" >
+        SHOWFILE = #{record.showfile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.isreviewPaid != null" >
+        ISREVIEW_PAID = #{record.isreviewPaid,jdbcType=VARCHAR},
+      </if>
+      <if test="record.implementPower != null" >
+        IMPLEMENT_POWER = #{record.implementPower,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matterSubname != null" >
+        MATTER_SUBNAME = #{record.matterSubname,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matterProperties != null" >
+        MATTER_PROPERTIES = #{record.matterProperties,jdbcType=VARCHAR},
+      </if>
+      <if test="record.matterStagename != null" >
+        MATTER_STAGENAME = #{record.matterStagename,jdbcType=VARCHAR},
+      </if>
+      <if test="record.chargeId != null" >
+        CHARGE_ID = #{record.chargeId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewType != null" >
+        REVIEW_TYPE = #{record.reviewType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewAcceptOrg != null" >
+        REVIEW_ACCEPT_ORG = #{record.reviewAcceptOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewAcceptLocation != null" >
+        REVIEW_ACCEPT_LOCATION = #{record.reviewAcceptLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.onlineHandleProcess != null" >
+        ONLINE_HANDLE_PROCESS = #{record.onlineHandleProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operationFileId != null" >
+        OPERATION_FILE_ID = #{record.operationFileId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.operationFileName != null" >
+        OPERATION_FILE_NAME = #{record.operationFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processId != null" >
+        PROCESS_ID = #{record.processId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processName != null" >
+        PROCESS_NAME = #{record.processName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.relocation != null" >
+        RELOCATION = #{record.relocation,jdbcType=VARCHAR},
+      </if>
+      <if test="record.questionId != null" >
+        QUESTION_ID = #{record.questionId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TJ_BASE_PERMISSION_ITEM
+    set MATTER_ID = #{record.matterId,jdbcType=VARCHAR},
+      IMPLEMENT_ID = #{record.implementId,jdbcType=VARCHAR},
+      MATTER_NAME = #{record.matterName,jdbcType=VARCHAR},
+      HANDLE_TIME = #{record.handleTime,jdbcType=TIMESTAMP},
+      MATTER_TYPE = #{record.matterType,jdbcType=VARCHAR},
+      HANDLE_ITEMS = #{record.handleItems,jdbcType=VARCHAR},
+      REVIEW_ID = #{record.reviewId,jdbcType=VARCHAR},
+      IMPLEMENT_LEVEL = #{record.implementLevel,jdbcType=VARCHAR},
+      IS_EMERGENCY = #{record.isEmergency,jdbcType=VARCHAR},
+      HANDLE_DEPT = #{record.handleDept,jdbcType=VARCHAR},
+      CONSULT_CALL = #{record.consultCall,jdbcType=VARCHAR},
+      SUPERVISION_CALL = #{record.supervisionCall,jdbcType=VARCHAR},
+      HANDLE_LOCATION = #{record.handleLocation,jdbcType=VARCHAR},
+      HANDLE_AREA = #{record.handleArea,jdbcType=VARCHAR},
+      HANDLETIME_PROMISE = #{record.handletimePromise,jdbcType=TIMESTAMP},
+      HANDLETIME_LIMIT = #{record.handletimeLimit,jdbcType=TIMESTAMP},
+      VALIDITY_PERIOD = #{record.validityPeriod,jdbcType=TIMESTAMP},
+      AVAILABLE_AREA = #{record.availableArea,jdbcType=VARCHAR},
+      IS_APPOINTMENT_REVIEW = #{record.isAppointmentReview,jdbcType=VARCHAR},
+      APPOINTMENT_REVIEW_CALL = #{record.appointmentReviewCall,jdbcType=VARCHAR},
+      HANDLE_COUNT = #{record.handleCount,jdbcType=VARCHAR},
+      POWER_SOURCE = #{record.powerSource,jdbcType=VARCHAR},
+      IS_SPECIAL = #{record.isSpecial,jdbcType=VARCHAR},
+      ACCEPT_TIME = #{record.acceptTime,jdbcType=TIMESTAMP},
+      ISHANDLE_ONLINE = #{record.ishandleOnline,jdbcType=VARCHAR},
+      ISHANDLE_CLOSE = #{record.ishandleClose,jdbcType=VARCHAR},
+      ISREVIEW_AUTO = #{record.isreviewAuto,jdbcType=VARCHAR},
+      ISREVIEW_PROMISE = #{record.isreviewPromise,jdbcType=VARCHAR},
+      ISHANDLE_AGENT = #{record.ishandleAgent,jdbcType=VARCHAR},
+      ISHANDLE_ALLAREA = #{record.ishandleAllarea,jdbcType=VARCHAR},
+      SHOWFILE = #{record.showfile,jdbcType=VARCHAR},
+      ISREVIEW_PAID = #{record.isreviewPaid,jdbcType=VARCHAR},
+      IMPLEMENT_POWER = #{record.implementPower,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      MATTER_SUBNAME = #{record.matterSubname,jdbcType=VARCHAR},
+      MATTER_PROPERTIES = #{record.matterProperties,jdbcType=VARCHAR},
+      MATTER_STAGENAME = #{record.matterStagename,jdbcType=VARCHAR},
+      CHARGE_ID = #{record.chargeId,jdbcType=VARCHAR},
+      REVIEW_TYPE = #{record.reviewType,jdbcType=VARCHAR},
+      REVIEW_ACCEPT_ORG = #{record.reviewAcceptOrg,jdbcType=VARCHAR},
+      REVIEW_ACCEPT_LOCATION = #{record.reviewAcceptLocation,jdbcType=VARCHAR},
+      ONLINE_HANDLE_PROCESS = #{record.onlineHandleProcess,jdbcType=VARCHAR},
+      OPERATION_FILE_ID = #{record.operationFileId,jdbcType=VARCHAR},
+      OPERATION_FILE_NAME = #{record.operationFileName,jdbcType=VARCHAR},
+      PROCESS_ID = #{record.processId,jdbcType=VARCHAR},
+      PROCESS_NAME = #{record.processName,jdbcType=VARCHAR},
+      RELOCATION = #{record.relocation,jdbcType=VARCHAR},
+      QUESTION_ID = #{record.questionId,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.oracle.BasePermissionItem" >
+    update TJ_BASE_PERMISSION_ITEM
+    <set >
+      <if test="implementId != null" >
+        IMPLEMENT_ID = #{implementId,jdbcType=VARCHAR},
+      </if>
+      <if test="matterName != null" >
+        MATTER_NAME = #{matterName,jdbcType=VARCHAR},
+      </if>
+      <if test="handleTime != null" >
+        HANDLE_TIME = #{handleTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="matterType != null" >
+        MATTER_TYPE = #{matterType,jdbcType=VARCHAR},
+      </if>
+      <if test="handleItems != null" >
+        HANDLE_ITEMS = #{handleItems,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewId != null" >
+        REVIEW_ID = #{reviewId,jdbcType=VARCHAR},
+      </if>
+      <if test="implementLevel != null" >
+        IMPLEMENT_LEVEL = #{implementLevel,jdbcType=VARCHAR},
+      </if>
+      <if test="isEmergency != null" >
+        IS_EMERGENCY = #{isEmergency,jdbcType=VARCHAR},
+      </if>
+      <if test="handleDept != null" >
+        HANDLE_DEPT = #{handleDept,jdbcType=VARCHAR},
+      </if>
+      <if test="consultCall != null" >
+        CONSULT_CALL = #{consultCall,jdbcType=VARCHAR},
+      </if>
+      <if test="supervisionCall != null" >
+        SUPERVISION_CALL = #{supervisionCall,jdbcType=VARCHAR},
+      </if>
+      <if test="handleLocation != null" >
+        HANDLE_LOCATION = #{handleLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="handleArea != null" >
+        HANDLE_AREA = #{handleArea,jdbcType=VARCHAR},
+      </if>
+      <if test="handletimePromise != null" >
+        HANDLETIME_PROMISE = #{handletimePromise,jdbcType=TIMESTAMP},
+      </if>
+      <if test="handletimeLimit != null" >
+        HANDLETIME_LIMIT = #{handletimeLimit,jdbcType=TIMESTAMP},
+      </if>
+      <if test="validityPeriod != null" >
+        VALIDITY_PERIOD = #{validityPeriod,jdbcType=TIMESTAMP},
+      </if>
+      <if test="availableArea != null" >
+        AVAILABLE_AREA = #{availableArea,jdbcType=VARCHAR},
+      </if>
+      <if test="isAppointmentReview != null" >
+        IS_APPOINTMENT_REVIEW = #{isAppointmentReview,jdbcType=VARCHAR},
+      </if>
+      <if test="appointmentReviewCall != null" >
+        APPOINTMENT_REVIEW_CALL = #{appointmentReviewCall,jdbcType=VARCHAR},
+      </if>
+      <if test="handleCount != null" >
+        HANDLE_COUNT = #{handleCount,jdbcType=VARCHAR},
+      </if>
+      <if test="powerSource != null" >
+        POWER_SOURCE = #{powerSource,jdbcType=VARCHAR},
+      </if>
+      <if test="isSpecial != null" >
+        IS_SPECIAL = #{isSpecial,jdbcType=VARCHAR},
+      </if>
+      <if test="acceptTime != null" >
+        ACCEPT_TIME = #{acceptTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="ishandleOnline != null" >
+        ISHANDLE_ONLINE = #{ishandleOnline,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleClose != null" >
+        ISHANDLE_CLOSE = #{ishandleClose,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewAuto != null" >
+        ISREVIEW_AUTO = #{isreviewAuto,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewPromise != null" >
+        ISREVIEW_PROMISE = #{isreviewPromise,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleAgent != null" >
+        ISHANDLE_AGENT = #{ishandleAgent,jdbcType=VARCHAR},
+      </if>
+      <if test="ishandleAllarea != null" >
+        ISHANDLE_ALLAREA = #{ishandleAllarea,jdbcType=VARCHAR},
+      </if>
+      <if test="showfile != null" >
+        SHOWFILE = #{showfile,jdbcType=VARCHAR},
+      </if>
+      <if test="isreviewPaid != null" >
+        ISREVIEW_PAID = #{isreviewPaid,jdbcType=VARCHAR},
+      </if>
+      <if test="implementPower != null" >
+        IMPLEMENT_POWER = #{implementPower,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="matterSubname != null" >
+        MATTER_SUBNAME = #{matterSubname,jdbcType=VARCHAR},
+      </if>
+      <if test="matterProperties != null" >
+        MATTER_PROPERTIES = #{matterProperties,jdbcType=VARCHAR},
+      </if>
+      <if test="matterStagename != null" >
+        MATTER_STAGENAME = #{matterStagename,jdbcType=VARCHAR},
+      </if>
+      <if test="chargeId != null" >
+        CHARGE_ID = #{chargeId,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewType != null" >
+        REVIEW_TYPE = #{reviewType,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewAcceptOrg != null" >
+        REVIEW_ACCEPT_ORG = #{reviewAcceptOrg,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewAcceptLocation != null" >
+        REVIEW_ACCEPT_LOCATION = #{reviewAcceptLocation,jdbcType=VARCHAR},
+      </if>
+      <if test="onlineHandleProcess != null" >
+        ONLINE_HANDLE_PROCESS = #{onlineHandleProcess,jdbcType=VARCHAR},
+      </if>
+      <if test="operationFileId != null" >
+        OPERATION_FILE_ID = #{operationFileId,jdbcType=VARCHAR},
+      </if>
+      <if test="operationFileName != null" >
+        OPERATION_FILE_NAME = #{operationFileName,jdbcType=VARCHAR},
+      </if>
+      <if test="processId != null" >
+        PROCESS_ID = #{processId,jdbcType=VARCHAR},
+      </if>
+      <if test="processName != null" >
+        PROCESS_NAME = #{processName,jdbcType=VARCHAR},
+      </if>
+      <if test="relocation != null" >
+        RELOCATION = #{relocation,jdbcType=VARCHAR},
+      </if>
+      <if test="questionId != null" >
+        QUESTION_ID = #{questionId,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where MATTER_ID = #{matterId,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.oracle.BasePermissionItem" >
+    update TJ_BASE_PERMISSION_ITEM
+    set IMPLEMENT_ID = #{implementId,jdbcType=VARCHAR},
+      MATTER_NAME = #{matterName,jdbcType=VARCHAR},
+      HANDLE_TIME = #{handleTime,jdbcType=TIMESTAMP},
+      MATTER_TYPE = #{matterType,jdbcType=VARCHAR},
+      HANDLE_ITEMS = #{handleItems,jdbcType=VARCHAR},
+      REVIEW_ID = #{reviewId,jdbcType=VARCHAR},
+      IMPLEMENT_LEVEL = #{implementLevel,jdbcType=VARCHAR},
+      IS_EMERGENCY = #{isEmergency,jdbcType=VARCHAR},
+      HANDLE_DEPT = #{handleDept,jdbcType=VARCHAR},
+      CONSULT_CALL = #{consultCall,jdbcType=VARCHAR},
+      SUPERVISION_CALL = #{supervisionCall,jdbcType=VARCHAR},
+      HANDLE_LOCATION = #{handleLocation,jdbcType=VARCHAR},
+      HANDLE_AREA = #{handleArea,jdbcType=VARCHAR},
+      HANDLETIME_PROMISE = #{handletimePromise,jdbcType=TIMESTAMP},
+      HANDLETIME_LIMIT = #{handletimeLimit,jdbcType=TIMESTAMP},
+      VALIDITY_PERIOD = #{validityPeriod,jdbcType=TIMESTAMP},
+      AVAILABLE_AREA = #{availableArea,jdbcType=VARCHAR},
+      IS_APPOINTMENT_REVIEW = #{isAppointmentReview,jdbcType=VARCHAR},
+      APPOINTMENT_REVIEW_CALL = #{appointmentReviewCall,jdbcType=VARCHAR},
+      HANDLE_COUNT = #{handleCount,jdbcType=VARCHAR},
+      POWER_SOURCE = #{powerSource,jdbcType=VARCHAR},
+      IS_SPECIAL = #{isSpecial,jdbcType=VARCHAR},
+      ACCEPT_TIME = #{acceptTime,jdbcType=TIMESTAMP},
+      ISHANDLE_ONLINE = #{ishandleOnline,jdbcType=VARCHAR},
+      ISHANDLE_CLOSE = #{ishandleClose,jdbcType=VARCHAR},
+      ISREVIEW_AUTO = #{isreviewAuto,jdbcType=VARCHAR},
+      ISREVIEW_PROMISE = #{isreviewPromise,jdbcType=VARCHAR},
+      ISHANDLE_AGENT = #{ishandleAgent,jdbcType=VARCHAR},
+      ISHANDLE_ALLAREA = #{ishandleAllarea,jdbcType=VARCHAR},
+      SHOWFILE = #{showfile,jdbcType=VARCHAR},
+      ISREVIEW_PAID = #{isreviewPaid,jdbcType=VARCHAR},
+      IMPLEMENT_POWER = #{implementPower,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      MATTER_SUBNAME = #{matterSubname,jdbcType=VARCHAR},
+      MATTER_PROPERTIES = #{matterProperties,jdbcType=VARCHAR},
+      MATTER_STAGENAME = #{matterStagename,jdbcType=VARCHAR},
+      CHARGE_ID = #{chargeId,jdbcType=VARCHAR},
+      REVIEW_TYPE = #{reviewType,jdbcType=VARCHAR},
+      REVIEW_ACCEPT_ORG = #{reviewAcceptOrg,jdbcType=VARCHAR},
+      REVIEW_ACCEPT_LOCATION = #{reviewAcceptLocation,jdbcType=VARCHAR},
+      ONLINE_HANDLE_PROCESS = #{onlineHandleProcess,jdbcType=VARCHAR},
+      OPERATION_FILE_ID = #{operationFileId,jdbcType=VARCHAR},
+      OPERATION_FILE_NAME = #{operationFileName,jdbcType=VARCHAR},
+      PROCESS_ID = #{processId,jdbcType=VARCHAR},
+      PROCESS_NAME = #{processName,jdbcType=VARCHAR},
+      RELOCATION = #{relocation,jdbcType=VARCHAR},
+      QUESTION_ID = #{questionId,jdbcType=VARCHAR}
+    where MATTER_ID = #{matterId,jdbcType=VARCHAR}
+  </update>
+</mapper>

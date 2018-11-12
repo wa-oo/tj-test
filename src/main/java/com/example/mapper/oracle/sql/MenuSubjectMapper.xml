@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.oracle.MenuSubjectMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.oracle.MenuSubject" >
+    <id column="ID" property="id" jdbcType="VARCHAR" />
+    <result column="SUBJECT_NAME" property="subjectName" jdbcType="VARCHAR" />
+    <result column="PARENT_ID" property="parentId" jdbcType="VARCHAR" />
+    <result column="PARENT_NAME" property="parentName" jdbcType="VARCHAR" />
+    <result column="SUBJECT" property="subject" jdbcType="VARCHAR" />
+    <result column="SUBJECTCATEGORY_ID" property="subjectcategoryId" jdbcType="VARCHAR" />
+    <result column="CATEGORY" property="category" jdbcType="VARCHAR" />
+    <result column="STATE" property="state" jdbcType="VARCHAR" />
+    <result column="PIC_PATH" property="picPath" jdbcType="VARCHAR" />
+    <result column="CATEGORY_SORT" property="categorySort" jdbcType="VARCHAR" />
+    <result column="DESCRIBE" property="describe" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, SUBJECT_NAME, PARENT_ID, PARENT_NAME, SUBJECT, SUBJECTCATEGORY_ID, CATEGORY, 
+    STATE, PIC_PATH, CATEGORY_SORT, DESCRIBE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.oracle.MenuSubjectExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TJ_MENU_SUBJECT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
+    select 
+    <include refid="Base_Column_List" />
+    from TJ_MENU_SUBJECT
+    where ID = #{id,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >
+    delete from TJ_MENU_SUBJECT
+    where ID = #{id,jdbcType=VARCHAR}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.oracle.MenuSubjectExample" >
+    delete from TJ_MENU_SUBJECT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.oracle.MenuSubject" >
+    insert into TJ_MENU_SUBJECT (ID, SUBJECT_NAME, PARENT_ID, 
+      PARENT_NAME, SUBJECT, SUBJECTCATEGORY_ID, 
+      CATEGORY, STATE, PIC_PATH, 
+      CATEGORY_SORT, DESCRIBE)
+    values (#{id,jdbcType=VARCHAR}, #{subjectName,jdbcType=VARCHAR}, #{parentId,jdbcType=VARCHAR}, 
+      #{parentName,jdbcType=VARCHAR}, #{subject,jdbcType=VARCHAR}, #{subjectcategoryId,jdbcType=VARCHAR}, 
+      #{category,jdbcType=VARCHAR}, #{state,jdbcType=VARCHAR}, #{picPath,jdbcType=VARCHAR}, 
+      #{categorySort,jdbcType=VARCHAR}, #{describe,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.oracle.MenuSubject" >
+    insert into TJ_MENU_SUBJECT
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="subjectName != null" >
+        SUBJECT_NAME,
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
+      <if test="parentName != null" >
+        PARENT_NAME,
+      </if>
+      <if test="subject != null" >
+        SUBJECT,
+      </if>
+      <if test="subjectcategoryId != null" >
+        SUBJECTCATEGORY_ID,
+      </if>
+      <if test="category != null" >
+        CATEGORY,
+      </if>
+      <if test="state != null" >
+        STATE,
+      </if>
+      <if test="picPath != null" >
+        PIC_PATH,
+      </if>
+      <if test="categorySort != null" >
+        CATEGORY_SORT,
+      </if>
+      <if test="describe != null" >
+        DESCRIBE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectName != null" >
+        #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentName != null" >
+        #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectcategoryId != null" >
+        #{subjectcategoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="picPath != null" >
+        #{picPath,jdbcType=VARCHAR},
+      </if>
+      <if test="categorySort != null" >
+        #{categorySort,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null" >
+        #{describe,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.oracle.MenuSubjectExample" resultType="java.lang.Integer" >
+    select count(*) from TJ_MENU_SUBJECT
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TJ_MENU_SUBJECT
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectName != null" >
+        SUBJECT_NAME = #{record.subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentId != null" >
+        PARENT_ID = #{record.parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.parentName != null" >
+        PARENT_NAME = #{record.parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subject != null" >
+        SUBJECT = #{record.subject,jdbcType=VARCHAR},
+      </if>
+      <if test="record.subjectcategoryId != null" >
+        SUBJECTCATEGORY_ID = #{record.subjectcategoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.category != null" >
+        CATEGORY = #{record.category,jdbcType=VARCHAR},
+      </if>
+      <if test="record.state != null" >
+        STATE = #{record.state,jdbcType=VARCHAR},
+      </if>
+      <if test="record.picPath != null" >
+        PIC_PATH = #{record.picPath,jdbcType=VARCHAR},
+      </if>
+      <if test="record.categorySort != null" >
+        CATEGORY_SORT = #{record.categorySort,jdbcType=VARCHAR},
+      </if>
+      <if test="record.describe != null" >
+        DESCRIBE = #{record.describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TJ_MENU_SUBJECT
+    set ID = #{record.id,jdbcType=VARCHAR},
+      SUBJECT_NAME = #{record.subjectName,jdbcType=VARCHAR},
+      PARENT_ID = #{record.parentId,jdbcType=VARCHAR},
+      PARENT_NAME = #{record.parentName,jdbcType=VARCHAR},
+      SUBJECT = #{record.subject,jdbcType=VARCHAR},
+      SUBJECTCATEGORY_ID = #{record.subjectcategoryId,jdbcType=VARCHAR},
+      CATEGORY = #{record.category,jdbcType=VARCHAR},
+      STATE = #{record.state,jdbcType=VARCHAR},
+      PIC_PATH = #{record.picPath,jdbcType=VARCHAR},
+      CATEGORY_SORT = #{record.categorySort,jdbcType=VARCHAR},
+      DESCRIBE = #{record.describe,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.oracle.MenuSubject" >
+    update TJ_MENU_SUBJECT
+    <set >
+      <if test="subjectName != null" >
+        SUBJECT_NAME = #{subjectName,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      </if>
+      <if test="parentName != null" >
+        PARENT_NAME = #{parentName,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        SUBJECT = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="subjectcategoryId != null" >
+        SUBJECTCATEGORY_ID = #{subjectcategoryId,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        CATEGORY = #{category,jdbcType=VARCHAR},
+      </if>
+      <if test="state != null" >
+        STATE = #{state,jdbcType=VARCHAR},
+      </if>
+      <if test="picPath != null" >
+        PIC_PATH = #{picPath,jdbcType=VARCHAR},
+      </if>
+      <if test="categorySort != null" >
+        CATEGORY_SORT = #{categorySort,jdbcType=VARCHAR},
+      </if>
+      <if test="describe != null" >
+        DESCRIBE = #{describe,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.oracle.MenuSubject" >
+    update TJ_MENU_SUBJECT
+    set SUBJECT_NAME = #{subjectName,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=VARCHAR},
+      PARENT_NAME = #{parentName,jdbcType=VARCHAR},
+      SUBJECT = #{subject,jdbcType=VARCHAR},
+      SUBJECTCATEGORY_ID = #{subjectcategoryId,jdbcType=VARCHAR},
+      CATEGORY = #{category,jdbcType=VARCHAR},
+      STATE = #{state,jdbcType=VARCHAR},
+      PIC_PATH = #{picPath,jdbcType=VARCHAR},
+      CATEGORY_SORT = #{categorySort,jdbcType=VARCHAR},
+      DESCRIBE = #{describe,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=VARCHAR}
+  </update>
+</mapper>
