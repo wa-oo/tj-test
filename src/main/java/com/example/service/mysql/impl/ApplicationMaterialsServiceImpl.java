@@ -1,7 +1,9 @@
-package com.example.service.impl;
+package com.example.service.mysql.impl;
 
-import com.example.mapper.ApplicationMaterialsMapper;
-import com.example.service.ApplicationMaterialsService;
+import com.example.mapper.mysql.ApplicationMaterialsMapper;
+import com.example.model.mysql.ApplicationMaterials;
+import com.example.model.mysql.ApplicationMaterialsExample;
+import com.example.service.mysql.ApplicationMaterialsService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

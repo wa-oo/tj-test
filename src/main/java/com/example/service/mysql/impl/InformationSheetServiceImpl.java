@@ -1,7 +1,9 @@
-package com.example.service.impl;
+package com.example.service.mysql.impl;
 
-import com.example.mapper.InformationSheetMapper;
-import com.example.service.InformationSheetService;
+import com.example.mapper.mysql.InformationSheetMapper;
+import com.example.model.mysql.InformationSheet;
+import com.example.model.mysql.InformationSheetExample;
+import com.example.service.mysql.InformationSheetService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

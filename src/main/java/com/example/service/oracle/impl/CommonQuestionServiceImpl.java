@@ -1,21 +1,25 @@
-package com.example.service.impl;
+package com.example.service.oracle.impl;
 
-import com.example.mapper.CommonProblemMapper;
-import com.example.service.CommonProblemMapperService;
+import com.example.mapper.mysql.CommonProblemMapper;
+import com.example.model.mysql.CommonProblem;
+import com.example.model.mysql.CommonProblemExample;
+import com.example.service.mysql.CommonProblemMapperService;
+import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import java.util.List;
 
 /**
- * @author wangtaog@mail.taiji.com.cn
- * @date 2018/11/7
+ * @author Allen
+ * @date 2018/11/12
+ * @Maill wangtaog@mail.taiji.com.cn
  */
-
-public class CommonProblemMapperServiceImpl implements CommonProblemMapperService {
-
+@Service(value = "CommonQuestionService")
+public class CommonQuestionServiceImpl implements CommonProblemMapperService {
+    
     @Resource
     private CommonProblemMapper commonProblemMapper;
-
+    
     @Override
     public int countByExample(CommonProblemExample example) {
         return commonProblemMapper.countByExample(example);

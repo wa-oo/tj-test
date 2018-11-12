@@ -1,5 +1,7 @@
-package com.example.service;
+package com.example.service.mysql;
 
+import com.example.model.mysql.CommonProblem;
+import com.example.model.mysql.CommonProblemExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

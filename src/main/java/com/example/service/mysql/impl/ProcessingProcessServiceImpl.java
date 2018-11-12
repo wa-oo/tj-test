@@ -1,7 +1,9 @@
-package com.example.service.impl;
+package com.example.service.mysql.impl;
 
-import com.example.mapper.ProcessingProcessMapper;
-import com.example.service.ProcessingProcessService;
+import com.example.mapper.mysql.ProcessingProcessMapper;
+import com.example.model.mysql.ProcessingProcess;
+import com.example.model.mysql.ProcessingProcessExample;
+import com.example.service.mysql.ProcessingProcessService;
 
 import javax.annotation.Resource;
 import java.util.List;

@@ -1,5 +1,7 @@
-package com.example.service;
+package com.example.service.mysql;
 
+import com.example.model.mysql.ApplicationMaterials;
+import com.example.model.mysql.ApplicationMaterialsExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 
