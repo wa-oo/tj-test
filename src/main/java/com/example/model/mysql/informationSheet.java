@@ -1,6 +1,6 @@
 package com.example.model.mysql;
 
-public class informationSheet {
+public class InformationSheet {
     private Integer id;
 
     private String tableName;

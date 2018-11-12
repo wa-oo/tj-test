@@ -1,6 +1,6 @@
 package com.example.model.mysql;
 
-public class applicationMaterials {
+public class ApplicationMaterials {
     private Integer id;
 
     private Integer informationId;

@@ -1,6 +1,6 @@
 package com.example.model.mysql;
 
-public class processingProcess {
+public class ProcessingProcess {
     private Integer id;
 
     private Integer informationId;

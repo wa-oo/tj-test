@@ -1,30 +1,30 @@
 package com.example.mapper.mysql;
 
-import com.example.model.mysql.informationSheet;
-import com.example.model.mysql.informationSheetExample;
+import com.example.model.mysql.InformationSheet;
+import com.example.model.mysql.InformationSheetExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface informationSheetMapper {
-    int countByExample(informationSheetExample example);
+public interface InformationSheetMapper {
+    int countByExample(InformationSheetExample example);
 
-    int deleteByExample(informationSheetExample example);
+    int deleteByExample(InformationSheetExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(informationSheet record);
+    int insert(InformationSheet record);
 
-    int insertSelective(informationSheet record);
+    int insertSelective(InformationSheet record);
 
-    List<informationSheet> selectByExample(informationSheetExample example);
+    List<InformationSheet> selectByExample(InformationSheetExample example);
 
-    informationSheet selectByPrimaryKey(Integer id);
+    InformationSheet selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") informationSheet record, @Param("example") informationSheetExample example);
+    int updateByExampleSelective(@Param("record") InformationSheet record, @Param("example") InformationSheetExample example);
 
-    int updateByExample(@Param("record") informationSheet record, @Param("example") informationSheetExample example);
+    int updateByExample(@Param("record") InformationSheet record, @Param("example") InformationSheetExample example);
 
-    int updateByPrimaryKeySelective(informationSheet record);
+    int updateByPrimaryKeySelective(InformationSheet record);
 
-    int updateByPrimaryKey(informationSheet record);
+    int updateByPrimaryKey(InformationSheet record);
 }

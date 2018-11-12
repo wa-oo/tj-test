@@ -1,30 +1,30 @@
 package com.example.mapper.mysql;
 
-import com.example.model.mysql.commonProblem;
-import com.example.model.mysql.commonProblemExample;
+import com.example.model.mysql.CommonProblem;
+import com.example.model.mysql.CommonProblemExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface commonProblemMapper {
-    int countByExample(commonProblemExample example);
+public interface CommonProblemMapper {
+    int countByExample(CommonProblemExample example);
 
-    int deleteByExample(commonProblemExample example);
+    int deleteByExample(CommonProblemExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(commonProblem record);
+    int insert(CommonProblem record);
 
-    int insertSelective(commonProblem record);
+    int insertSelective(CommonProblem record);
 
-    List<commonProblem> selectByExample(commonProblemExample example);
+    List<CommonProblem> selectByExample(CommonProblemExample example);
 
-    commonProblem selectByPrimaryKey(Integer id);
+    CommonProblem selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") commonProblem record, @Param("example") commonProblemExample example);
+    int updateByExampleSelective(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
-    int updateByExample(@Param("record") commonProblem record, @Param("example") commonProblemExample example);
+    int updateByExample(@Param("record") CommonProblem record, @Param("example") CommonProblemExample example);
 
-    int updateByPrimaryKeySelective(commonProblem record);
+    int updateByPrimaryKeySelective(CommonProblem record);
 
-    int updateByPrimaryKey(commonProblem record);
+    int updateByPrimaryKey(CommonProblem record);
 }

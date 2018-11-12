@@ -1,30 +1,30 @@
 package com.example.mapper.mysql;
 
-import com.example.model.mysql.applicationMaterials;
-import com.example.model.mysql.applicationMaterialsExample;
+import com.example.model.mysql.ApplicationMaterials;
+import com.example.model.mysql.ApplicationMaterialsExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface applicationMaterialsMapper {
-    int countByExample(applicationMaterialsExample example);
+public interface ApplicationMaterialsMapper {
+    int countByExample(ApplicationMaterialsExample example);
 
-    int deleteByExample(applicationMaterialsExample example);
+    int deleteByExample(ApplicationMaterialsExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(applicationMaterials record);
+    int insert(ApplicationMaterials record);
 
-    int insertSelective(applicationMaterials record);
+    int insertSelective(ApplicationMaterials record);
 
-    List<applicationMaterials> selectByExample(applicationMaterialsExample example);
+    List<ApplicationMaterials> selectByExample(ApplicationMaterialsExample example);
 
-    applicationMaterials selectByPrimaryKey(Integer id);
+    ApplicationMaterials selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") applicationMaterials record, @Param("example") applicationMaterialsExample example);
+    int updateByExampleSelective(@Param("record") ApplicationMaterials record, @Param("example") ApplicationMaterialsExample example);
 
-    int updateByExample(@Param("record") applicationMaterials record, @Param("example") applicationMaterialsExample example);
+    int updateByExample(@Param("record") ApplicationMaterials record, @Param("example") ApplicationMaterialsExample example);
 
-    int updateByPrimaryKeySelective(applicationMaterials record);
+    int updateByPrimaryKeySelective(ApplicationMaterials record);
 
-    int updateByPrimaryKey(applicationMaterials record);
+    int updateByPrimaryKey(ApplicationMaterials record);
 }

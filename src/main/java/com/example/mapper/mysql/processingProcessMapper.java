@@ -1,30 +1,30 @@
 package com.example.mapper.mysql;
 
-import com.example.model.mysql.processingProcess;
-import com.example.model.mysql.processingProcessExample;
+import com.example.model.mysql.ProcessingProcess;
+import com.example.model.mysql.ProcessingProcessExample;
 import java.util.List;
 import org.apache.ibatis.annotations.Param;
 
-public interface processingProcessMapper {
-    int countByExample(processingProcessExample example);
+public interface ProcessingProcessMapper {
+    int countByExample(ProcessingProcessExample example);
 
-    int deleteByExample(processingProcessExample example);
+    int deleteByExample(ProcessingProcessExample example);
 
     int deleteByPrimaryKey(Integer id);
 
-    int insert(processingProcess record);
+    int insert(ProcessingProcess record);
 
-    int insertSelective(processingProcess record);
+    int insertSelective(ProcessingProcess record);
 
-    List<processingProcess> selectByExample(processingProcessExample example);
+    List<ProcessingProcess> selectByExample(ProcessingProcessExample example);
 
-    processingProcess selectByPrimaryKey(Integer id);
+    ProcessingProcess selectByPrimaryKey(Integer id);
 
-    int updateByExampleSelective(@Param("record") processingProcess record, @Param("example") processingProcessExample example);
+    int updateByExampleSelective(@Param("record") ProcessingProcess record, @Param("example") ProcessingProcessExample example);
 
-    int updateByExample(@Param("record") processingProcess record, @Param("example") processingProcessExample example);
+    int updateByExample(@Param("record") ProcessingProcess record, @Param("example") ProcessingProcessExample example);
 
-    int updateByPrimaryKeySelective(processingProcess record);
+    int updateByPrimaryKeySelective(ProcessingProcess record);
 
-    int updateByPrimaryKey(processingProcess record);
+    int updateByPrimaryKey(ProcessingProcess record);
 }

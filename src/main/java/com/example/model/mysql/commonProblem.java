@@ -1,6 +1,6 @@
 package com.example.model.mysql;
 
-public class commonProblem {
+public class CommonProblem {
     private Integer id;
 
     private Integer informationId;

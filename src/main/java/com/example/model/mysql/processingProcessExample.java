@@ -3,14 +3,14 @@ package com.example.model.mysql;
 import java.util.ArrayList;
 import java.util.List;
 
-public class processingProcessExample {
+public class ProcessingProcessExample {
     protected String orderByClause;
 
     protected boolean distinct;
 
     protected List<Criteria> oredCriteria;
 
-    public processingProcessExample() {
+    public ProcessingProcessExample() {
         oredCriteria = new ArrayList<Criteria>();
     }
 
