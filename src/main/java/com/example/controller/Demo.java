@@ -1,29 +1,24 @@
 package com.example.controller;
 
-import com.example.model.mysql.InformationSheet;
-import com.example.model.mysql.InformationSheetExample;
-import com.example.service.mysql.InformationSheetService;
-import org.springframework.beans.factory.annotation.Autowired;
-
-import java.util.List;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author Allen
  * @date 2018/11/9
  * @Maill wangtaog@mail.taiji.com.cn
  */
-
+@Controller
 public class Demo {
 
-    @Autowired
-    private InformationSheetService informationSheetService;
-
-    public void main(String[] args) {
-        InformationSheetExample informationSheetExample = new InformationSheetExample();
-        informationSheetExample.setDistinct(false);
-        List<InformationSheet> list = informationSheetService.selectByExample(informationSheetExample);
-        for (InformationSheet informationSheet: list) {
-
-        }
-    }
+//    @Autowired
+//    private InformationSheetService informationSheetService;
+//
+//    public void main(String[] args) {
+//        InformationSheetExample informationSheetExample = new InformationSheetExample();
+//        informationSheetExample.setDistinct(false);
+//        List<InformationSheet> list = informationSheetService.selectByExample(informationSheetExample);
+//        for (InformationSheet informationSheet: list) {
+//
+//        }
+//    }
 }

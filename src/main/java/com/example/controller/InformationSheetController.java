@@ -1,8 +1,8 @@
 package com.example.controller;
 
-import com.example.model.mysql.InformationSheet;
-import com.example.model.mysql.InformationSheetExample;
-import com.example.service.mysql.InformationSheetService;
+import com.example.model.InformationSheet;
+import com.example.model.InformationSheetExample;
+import com.example.service.InformationSheetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

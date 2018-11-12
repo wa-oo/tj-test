@@ -1,6 +1,7 @@
 package com.example;
 
-import com.example.service.mysql.InformationSheetService;
+import com.example.model.InformationSheet;
+import com.example.service.InformationSheetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +22,6 @@ public class TjTestApplicationTests {
     @Autowired
     static InformationSheet informationSheet;
 
-    @Test
-    public void sss() {
-        informationSheet = informationSheetService.selectByPrimaryKey(33);
-        System.out.println(informationSheet.toString());
-    }
+
 
 }

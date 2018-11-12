@@ -1,0 +1,548 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.mapper.ProcessingProcessMapper">
+  <resultMap id="BaseResultMap" type="com.example.model.ProcessingProcess">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="information_id" jdbcType="INTEGER" property="informationId" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="step" jdbcType="VARCHAR" property="step" />
+    <result column="handler" jdbcType="VARCHAR" property="handler" />
+    <result column="time_limit" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="review_criteria" jdbcType="VARCHAR" property="reviewCriteria" />
+    <result column="basis" jdbcType="VARCHAR" property="basis" />
+    <result column="processing_results" jdbcType="VARCHAR" property="processingResults" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, information_id, link, step, handler, time_limit, review_criteria, basis, processing_results
+  </sql>
+  <select id="selectByExample" parameterType="com.example.model.ProcessingProcessExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processing_process
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from processing_process
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.ProcessingProcessExample">
+    delete from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.ProcessingProcess">
+    insert into processing_process (id, information_id, link, 
+      step, handler, time_limit, 
+      review_criteria, basis, processing_results
+      )
+    values (#{id,jdbcType=INTEGER}, #{informationId,jdbcType=INTEGER}, #{link,jdbcType=VARCHAR}, 
+      #{step,jdbcType=VARCHAR}, #{handler,jdbcType=VARCHAR}, #{timeLimit,jdbcType=VARCHAR}, 
+      #{reviewCriteria,jdbcType=VARCHAR}, #{basis,jdbcType=VARCHAR}, #{processingResults,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.ProcessingProcess">
+    insert into processing_process
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="informationId != null">
+        information_id,
+      </if>
+      <if test="link != null">
+        link,
+      </if>
+      <if test="step != null">
+        step,
+      </if>
+      <if test="handler != null">
+        handler,
+      </if>
+      <if test="timeLimit != null">
+        time_limit,
+      </if>
+      <if test="reviewCriteria != null">
+        review_criteria,
+      </if>
+      <if test="basis != null">
+        basis,
+      </if>
+      <if test="processingResults != null">
+        processing_results,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="informationId != null">
+        #{informationId,jdbcType=INTEGER},
+      </if>
+      <if test="link != null">
+        #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="step != null">
+        #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null">
+        #{handler,jdbcType=VARCHAR},
+      </if>
+      <if test="timeLimit != null">
+        #{timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewCriteria != null">
+        #{reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="basis != null">
+        #{basis,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResults != null">
+        #{processingResults,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.ProcessingProcessExample" resultType="java.lang.Integer">
+    select count(*) from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processing_process
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.informationId != null">
+        information_id = #{record.informationId,jdbcType=INTEGER},
+      </if>
+      <if test="record.link != null">
+        link = #{record.link,jdbcType=VARCHAR},
+      </if>
+      <if test="record.step != null">
+        step = #{record.step,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handler != null">
+        handler = #{record.handler,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeLimit != null">
+        time_limit = #{record.timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewCriteria != null">
+        review_criteria = #{record.reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="record.basis != null">
+        basis = #{record.basis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processingResults != null">
+        processing_results = #{record.processingResults,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processing_process
+    set id = #{record.id,jdbcType=INTEGER},
+      information_id = #{record.informationId,jdbcType=INTEGER},
+      link = #{record.link,jdbcType=VARCHAR},
+      step = #{record.step,jdbcType=VARCHAR},
+      handler = #{record.handler,jdbcType=VARCHAR},
+      time_limit = #{record.timeLimit,jdbcType=VARCHAR},
+      review_criteria = #{record.reviewCriteria,jdbcType=VARCHAR},
+      basis = #{record.basis,jdbcType=VARCHAR},
+      processing_results = #{record.processingResults,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.ProcessingProcess">
+    update processing_process
+    <set>
+      <if test="informationId != null">
+        information_id = #{informationId,jdbcType=INTEGER},
+      </if>
+      <if test="link != null">
+        link = #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="step != null">
+        step = #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null">
+        handler = #{handler,jdbcType=VARCHAR},
+      </if>
+      <if test="timeLimit != null">
+        time_limit = #{timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewCriteria != null">
+        review_criteria = #{reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="basis != null">
+        basis = #{basis,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResults != null">
+        processing_results = #{processingResults,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.ProcessingProcess">
+    update processing_process
+    set information_id = #{informationId,jdbcType=INTEGER},
+      link = #{link,jdbcType=VARCHAR},
+      step = #{step,jdbcType=VARCHAR},
+      handler = #{handler,jdbcType=VARCHAR},
+      time_limit = #{timeLimit,jdbcType=VARCHAR},
+      review_criteria = #{reviewCriteria,jdbcType=VARCHAR},
+      basis = #{basis,jdbcType=VARCHAR},
+      processing_results = #{processingResults,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="com.example.model.ProcessingProcess">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="information_id" jdbcType="INTEGER" property="informationId" />
+    <result column="link" jdbcType="VARCHAR" property="link" />
+    <result column="step" jdbcType="VARCHAR" property="step" />
+    <result column="handler" jdbcType="VARCHAR" property="handler" />
+    <result column="time_limit" jdbcType="VARCHAR" property="timeLimit" />
+    <result column="review_criteria" jdbcType="VARCHAR" property="reviewCriteria" />
+    <result column="basis" jdbcType="VARCHAR" property="basis" />
+    <result column="processing_results" jdbcType="VARCHAR" property="processingResults" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, information_id, link, step, handler, time_limit, review_criteria, basis, processing_results
+  </sql>
+  <select id="selectByExample" parameterType="com.example.model.ProcessingProcessExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from processing_process
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from processing_process
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.ProcessingProcessExample">
+    delete from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.ProcessingProcess">
+    insert into processing_process (id, information_id, link, 
+      step, handler, time_limit, 
+      review_criteria, basis, processing_results
+      )
+    values (#{id,jdbcType=INTEGER}, #{informationId,jdbcType=INTEGER}, #{link,jdbcType=VARCHAR}, 
+      #{step,jdbcType=VARCHAR}, #{handler,jdbcType=VARCHAR}, #{timeLimit,jdbcType=VARCHAR}, 
+      #{reviewCriteria,jdbcType=VARCHAR}, #{basis,jdbcType=VARCHAR}, #{processingResults,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.ProcessingProcess">
+    insert into processing_process
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="informationId != null">
+        information_id,
+      </if>
+      <if test="link != null">
+        link,
+      </if>
+      <if test="step != null">
+        step,
+      </if>
+      <if test="handler != null">
+        handler,
+      </if>
+      <if test="timeLimit != null">
+        time_limit,
+      </if>
+      <if test="reviewCriteria != null">
+        review_criteria,
+      </if>
+      <if test="basis != null">
+        basis,
+      </if>
+      <if test="processingResults != null">
+        processing_results,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="informationId != null">
+        #{informationId,jdbcType=INTEGER},
+      </if>
+      <if test="link != null">
+        #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="step != null">
+        #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null">
+        #{handler,jdbcType=VARCHAR},
+      </if>
+      <if test="timeLimit != null">
+        #{timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewCriteria != null">
+        #{reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="basis != null">
+        #{basis,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResults != null">
+        #{processingResults,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.ProcessingProcessExample" resultType="java.lang.Integer">
+    select count(*) from processing_process
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update processing_process
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.informationId != null">
+        information_id = #{record.informationId,jdbcType=INTEGER},
+      </if>
+      <if test="record.link != null">
+        link = #{record.link,jdbcType=VARCHAR},
+      </if>
+      <if test="record.step != null">
+        step = #{record.step,jdbcType=VARCHAR},
+      </if>
+      <if test="record.handler != null">
+        handler = #{record.handler,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timeLimit != null">
+        time_limit = #{record.timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="record.reviewCriteria != null">
+        review_criteria = #{record.reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="record.basis != null">
+        basis = #{record.basis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.processingResults != null">
+        processing_results = #{record.processingResults,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update processing_process
+    set id = #{record.id,jdbcType=INTEGER},
+      information_id = #{record.informationId,jdbcType=INTEGER},
+      link = #{record.link,jdbcType=VARCHAR},
+      step = #{record.step,jdbcType=VARCHAR},
+      handler = #{record.handler,jdbcType=VARCHAR},
+      time_limit = #{record.timeLimit,jdbcType=VARCHAR},
+      review_criteria = #{record.reviewCriteria,jdbcType=VARCHAR},
+      basis = #{record.basis,jdbcType=VARCHAR},
+      processing_results = #{record.processingResults,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.ProcessingProcess">
+    update processing_process
+    <set>
+      <if test="informationId != null">
+        information_id = #{informationId,jdbcType=INTEGER},
+      </if>
+      <if test="link != null">
+        link = #{link,jdbcType=VARCHAR},
+      </if>
+      <if test="step != null">
+        step = #{step,jdbcType=VARCHAR},
+      </if>
+      <if test="handler != null">
+        handler = #{handler,jdbcType=VARCHAR},
+      </if>
+      <if test="timeLimit != null">
+        time_limit = #{timeLimit,jdbcType=VARCHAR},
+      </if>
+      <if test="reviewCriteria != null">
+        review_criteria = #{reviewCriteria,jdbcType=VARCHAR},
+      </if>
+      <if test="basis != null">
+        basis = #{basis,jdbcType=VARCHAR},
+      </if>
+      <if test="processingResults != null">
+        processing_results = #{processingResults,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.ProcessingProcess">
+    update processing_process
+    set information_id = #{informationId,jdbcType=INTEGER},
+      link = #{link,jdbcType=VARCHAR},
+      step = #{step,jdbcType=VARCHAR},
+      handler = #{handler,jdbcType=VARCHAR},
+      time_limit = #{timeLimit,jdbcType=VARCHAR},
+      review_criteria = #{reviewCriteria,jdbcType=VARCHAR},
+      basis = #{basis,jdbcType=VARCHAR},
+      processing_results = #{processingResults,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

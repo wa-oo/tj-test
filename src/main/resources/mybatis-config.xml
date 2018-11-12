@@ -5,16 +5,21 @@
     <typeAliases>
     </typeAliases>
     <mappers>
+        <!--mysql-->
         <mapper resource="com/example/mapper/sql/ApplicationMaterialsMapper.xml"/>
-        <mapper resource="com/example/mapper/sql/BasePermissionItemMapper.xml"/>
         <mapper resource="com/example/mapper/sql/CommonProblemMapper.xml"/>
         <mapper resource="com/example/mapper/sql/InformationSheetMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/ProcessingProcessMapper.xml"/>
+        <!--oracle-->
+        <mapper resource="com/example/mapper/sql/BasePermissionItemMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/ChargeDependentMapper.xml"/>
         <mapper resource="com/example/mapper/sql/CommonQuestionMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/DeptInfoMapper.xml"/>
         <mapper resource="com/example/mapper/sql/LawMapper.xml"/>
         <mapper resource="com/example/mapper/sql/MaterialItemMapper.xml"/>
         <mapper resource="com/example/mapper/sql/MenuInformationMapper.xml"/>
         <mapper resource="com/example/mapper/sql/MenuSubjectMapper.xml"/>
-        <mapper resource="com/example/mapper/sql/ProcessingProcessMapper.xml"/>
+        <mapper resource="com/example/mapper/sql/RegionInfoMapper.xml"/>
         <mapper resource="com/example/mapper/sql/SpecialInfoMapper.xml"/>
     </mappers>
 </configuration>

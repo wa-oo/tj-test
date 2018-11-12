@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.LawMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.Law" >
+    <id column="ID" property="id" jdbcType="DECIMAL" />
+    <result column="LAW_ID" property="lawId" jdbcType="VARCHAR" />
+    <result column="LAW_NAME" property="lawName" jdbcType="VARCHAR" />
+    <result column="LAW_NUMBER" property="lawNumber" jdbcType="VARCHAR" />
+    <result column="LAW_TEXT" property="lawText" jdbcType="VARCHAR" />
+    <result column="VERSION" property="version" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="CREATE_ID" property="createId" jdbcType="VARCHAR" />
+    <result column="EXCHANGE" property="exchange" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue" >
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue" >
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue" >
+                  and ${criterion.condition}
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List" >
+    ID, LAW_ID, LAW_NAME, LAW_NUMBER, LAW_TEXT, VERSION, CREATE_TIME, CREATE_ID, EXCHANGE
+  </sql>
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.LawExample" >
+    select
+    <if test="distinct" >
+      distinct
+    </if>
+    'true' as QUERYID,
+    <include refid="Base_Column_List" />
+    from TJ_LAW
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null" >
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.math.BigDecimal" >
+    select 
+    <include refid="Base_Column_List" />
+    from TJ_LAW
+    where ID = #{id,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.math.BigDecimal" >
+    delete from TJ_LAW
+    where ID = #{id,jdbcType=DECIMAL}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.example.model.LawExample" >
+    delete from TJ_LAW
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.example.model.Law" >
+    insert into TJ_LAW (ID, LAW_ID, LAW_NAME, 
+      LAW_NUMBER, LAW_TEXT, VERSION, 
+      CREATE_TIME, CREATE_ID, EXCHANGE
+      )
+    values (#{id,jdbcType=DECIMAL}, #{lawId,jdbcType=VARCHAR}, #{lawName,jdbcType=VARCHAR}, 
+      #{lawNumber,jdbcType=VARCHAR}, #{lawText,jdbcType=VARCHAR}, #{version,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=VARCHAR}, #{exchange,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.example.model.Law" >
+    insert into TJ_LAW
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="lawId != null" >
+        LAW_ID,
+      </if>
+      <if test="lawName != null" >
+        LAW_NAME,
+      </if>
+      <if test="lawNumber != null" >
+        LAW_NUMBER,
+      </if>
+      <if test="lawText != null" >
+        LAW_TEXT,
+      </if>
+      <if test="version != null" >
+        VERSION,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="exchange != null" >
+        EXCHANGE,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=DECIMAL},
+      </if>
+      <if test="lawId != null" >
+        #{lawId,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null" >
+        #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawNumber != null" >
+        #{lawNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lawText != null" >
+        #{lawText,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="exchange != null" >
+        #{exchange,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.example.model.LawExample" resultType="java.lang.Integer" >
+    select count(*) from TJ_LAW
+    <if test="_parameter != null" >
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map" >
+    update TJ_LAW
+    <set >
+      <if test="record.id != null" >
+        ID = #{record.id,jdbcType=DECIMAL},
+      </if>
+      <if test="record.lawId != null" >
+        LAW_ID = #{record.lawId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawName != null" >
+        LAW_NAME = #{record.lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawNumber != null" >
+        LAW_NUMBER = #{record.lawNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="record.lawText != null" >
+        LAW_TEXT = #{record.lawText,jdbcType=VARCHAR},
+      </if>
+      <if test="record.version != null" >
+        VERSION = #{record.version,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createTime != null" >
+        CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="record.createId != null" >
+        CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      </if>
+      <if test="record.exchange != null" >
+        EXCHANGE = #{record.exchange,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map" >
+    update TJ_LAW
+    set ID = #{record.id,jdbcType=DECIMAL},
+      LAW_ID = #{record.lawId,jdbcType=VARCHAR},
+      LAW_NAME = #{record.lawName,jdbcType=VARCHAR},
+      LAW_NUMBER = #{record.lawNumber,jdbcType=VARCHAR},
+      LAW_TEXT = #{record.lawText,jdbcType=VARCHAR},
+      VERSION = #{record.version,jdbcType=VARCHAR},
+      CREATE_TIME = #{record.createTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{record.createId,jdbcType=VARCHAR},
+      EXCHANGE = #{record.exchange,jdbcType=VARCHAR}
+    <if test="_parameter != null" >
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.Law" >
+    update TJ_LAW
+    <set >
+      <if test="lawId != null" >
+        LAW_ID = #{lawId,jdbcType=VARCHAR},
+      </if>
+      <if test="lawName != null" >
+        LAW_NAME = #{lawName,jdbcType=VARCHAR},
+      </if>
+      <if test="lawNumber != null" >
+        LAW_NUMBER = #{lawNumber,jdbcType=VARCHAR},
+      </if>
+      <if test="lawText != null" >
+        LAW_TEXT = #{lawText,jdbcType=VARCHAR},
+      </if>
+      <if test="version != null" >
+        VERSION = #{version,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=VARCHAR},
+      </if>
+      <if test="exchange != null" >
+        EXCHANGE = #{exchange,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.example.model.Law" >
+    update TJ_LAW
+    set LAW_ID = #{lawId,jdbcType=VARCHAR},
+      LAW_NAME = #{lawName,jdbcType=VARCHAR},
+      LAW_NUMBER = #{lawNumber,jdbcType=VARCHAR},
+      LAW_TEXT = #{lawText,jdbcType=VARCHAR},
+      VERSION = #{version,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{createId,jdbcType=VARCHAR},
+      EXCHANGE = #{exchange,jdbcType=VARCHAR}
+    where ID = #{id,jdbcType=DECIMAL}
+  </update>
+</mapper>
