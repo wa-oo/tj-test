@@ -1,7 +1,5 @@
 package com.example.service;
 
-import com.example.model.CommonProblem;
-import com.example.model.CommonProblemExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

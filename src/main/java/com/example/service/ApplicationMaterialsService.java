@@ -1,7 +1,5 @@
 package com.example.service;
 
-import com.example.model.ApplicationMaterials;
-import com.example.model.ApplicationMaterialsExample;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Service;
 

@@ -1,6 +1,5 @@
 package com.example;
 
-import com.example.model.InformationSheet;
 import com.example.service.InformationSheetService;
 import org.junit.Test;
 import org.junit.runner.RunWith;

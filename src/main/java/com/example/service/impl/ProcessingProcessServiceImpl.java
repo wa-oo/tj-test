@@ -1,11 +1,7 @@
 package com.example.service.impl;
 
 import com.example.mapper.ProcessingProcessMapper;
-import com.example.model.ProcessingProcess;
-import com.example.model.ProcessingProcessExample;
 import com.example.service.ProcessingProcessService;
-import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.util.List;

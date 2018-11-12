@@ -27,16 +27,16 @@
             <property name="forceBigDecimals" value="false"/>
         </javaTypeResolver>
         <!-- 生成模型的包名和位置-->
-        <javaModelGenerator targetPackage="com.example.model" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="com.example.model.oracle" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
         <!-- 生成映射文件的包名和位置-->
-        <sqlMapGenerator targetPackage="com.example.mapper.sql" targetProject="src/main/java">
+        <sqlMapGenerator targetPackage="com.example.mapper.oracle.sql" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </sqlMapGenerator>
         <!-- 生成DAO的包名和位置-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.mapper" targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.mapper.oracle" targetProject="src/main/java">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
         <!-- 要生成的表 tableName是数据库中的表名或视图名 domainObjectName是实体类名-->
@@ -53,33 +53,36 @@
         <!--<table tableName="processing_process" domainObjectName="processingProcess" enableCountByExample="true"-->
                <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
                <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
-        <!---->
-        <!--<table tableName="TJ_BASE_PERMISSION_ITEM" domainObjectName="BasePermissionItem" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
-        <!--<table tableName="TJ_COMMON_QUESTION" domainObjectName="CommonQuestion" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <!-- Oracle数据库 -->
+        <table tableName="TJ_BASE_PERMISSION_ITEM" domainObjectName="BasePermissionItem" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <table tableName="TJ_CHARGE_DEPENDENT" domainObjectName="ChargeDependent" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <table tableName="TJ_COMMON_QUESTION" domainObjectName="CommonQuestion" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
         <table tableName="TJ_DEPT_INFO" domainObjectName="DeptInfo" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <!--<table tableName="TJ_LAW" domainObjectName="Law" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
-        <!--<table tableName="TJ_MATERIAL_ITEM" domainObjectName="MaterialItem" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
-        <!--<table tableName="TJ_MENU_INFORMATION" domainObjectName="MenuInformation" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
-        <!--<table tableName="TJ_MENU_SUBJECT" domainObjectName="MenuSubject" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <table tableName="TJ_LAW" domainObjectName="Law" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <table tableName="TJ_MATERIAL_ITEM" domainObjectName="MaterialItem" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <table tableName="TJ_MENU_INFORMATION" domainObjectName="MenuInformation" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
+        <table tableName="TJ_MENU_SUBJECT" domainObjectName="MenuSubject" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
         <table tableName="TJ_REGION_INFO" domainObjectName="RegionInfo" enableCountByExample="true"
                enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
                selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
-        <!--<table tableName="TJ_SPECIAL_INFO" domainObjectName="SpecialInfo" enableCountByExample="true"-->
-               <!--enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"-->
-               <!--selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>-->
+        <table tableName="TJ_SPECIAL_INFO" domainObjectName="SpecialInfo" enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true" enableSelectByExample="true"
+               selectByExampleQueryId="true" enableDeleteByPrimaryKey="true"/>
     </context>
 </generatorConfiguration>

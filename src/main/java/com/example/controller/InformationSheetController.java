@@ -1,11 +1,12 @@
 package com.example.controller;
 
-import com.example.model.InformationSheet;
 import com.example.service.InformationSheetService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import java.util.List;
 
 /**
  * @author wangtaog@mail.taiji.com.cn
@@ -19,8 +20,10 @@ public class InformationSheetController {
 
     @RequestMapping("/getData")
     public String getData(Model model){
-        InformationSheet informationSheet = informationSheetService.selectByPrimaryKey(34);
-        model.addAttribute("info",informationSheet);
+        InformationSheetExample informationSheet = new InformationSheetExample();
+        informationSheet.setDistinct(false);
+        List<InformationSheet> list  = informationSheetService.selectByExample(informationSheet);
+        model.addAttribute("info",list);
         return "hello";
     }
 

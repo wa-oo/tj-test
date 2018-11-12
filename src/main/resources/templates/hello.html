@@ -6,29 +6,25 @@
     <script>
         testFunction();
     </script>
-
 </head>
 <body>
 <div class="showing">
     <table align='center' border='1' cellspacing='0'>
         <tr>
             <td>id</td>
-            <td>name</td>
-            <td>编辑</td>
-            <td>删除</td>
+            <td>ItemName</td>
+            <td>ChildName</td>
+            <td>BasicCoding</td>
         </tr>
-
         <tr th:each="info:${info}">
             <td th:text="${info.getId()}"></td>
             <td th:text="${info.getItemName()}"></td>
+            <td th:text="${info.getChildName()}"></td>
+            <td th:text="${info.getBasicCoding()}"></td>
+            <td th:text="${info.getApprovalCategory()}"></td>
             <td></td>
         </tr>
-
-
     </table>
-
 </div>
-
 </body>
-
 </html>
