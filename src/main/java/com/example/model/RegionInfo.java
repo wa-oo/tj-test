@@ -3,6 +3,7 @@ package com.example.model;
 import java.util.Date;
 
 public class RegionInfo {
+
     private String areaId;
 
     private String areaName;
