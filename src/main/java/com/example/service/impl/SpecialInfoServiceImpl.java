@@ -20,7 +20,6 @@ public class SpecialInfoServiceImpl implements SpecialInfoService {
     @Resource
     private SpecialInfoMapper specialInfoMapper;
     
-    
     @Override
     public int countByExample(SpecialInfoExample example) {
         return specialInfoMapper.countByExample(example);
