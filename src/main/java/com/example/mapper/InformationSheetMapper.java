@@ -3,7 +3,6 @@ package com.example.mapper;
 import com.example.model.InformationSheet;
 import com.example.model.InformationSheetExample;
 import java.util.List;
-
 import org.apache.ibatis.annotations.Param;
 
 public interface InformationSheetMapper {

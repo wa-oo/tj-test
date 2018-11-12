@@ -4,10 +4,8 @@ import com.example.model.DeptInfo;
 import com.example.model.DeptInfoExample;
 import java.math.BigDecimal;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface DeptInfoMapper {
     int countByExample(DeptInfoExample example);
 

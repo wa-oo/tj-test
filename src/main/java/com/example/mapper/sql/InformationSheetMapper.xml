@@ -1,74 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.mapper.InformationSheetMapper">
-  <resultMap id="BaseResultMap" type="com.example.model.InformationSheet">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="table_name" jdbcType="VARCHAR" property="tableName" />
-    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
-    <result column="basic_coding" jdbcType="VARCHAR" property="basicCoding" />
-    <result column="child_name" jdbcType="VARCHAR" property="childName" />
-    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
-    <result column="approval_category" jdbcType="VARCHAR" property="approvalCategory" />
-    <result column="service_object" jdbcType="VARCHAR" property="serviceObject" />
-    <result column="administrative_examination" jdbcType="VARCHAR" property="administrativeExamination" />
-    <result column="exercise_level" jdbcType="VARCHAR" property="exerciseLevel" />
-    <result column="handling_type" jdbcType="VARCHAR" property="handlingType" />
-    <result column="business_department" jdbcType="VARCHAR" property="businessDepartment" />
-    <result column="implementation_department" jdbcType="VARCHAR" property="implementationDepartment" />
-    <result column="implementation_coding" jdbcType="VARCHAR" property="implementationCoding" />
-    <result column="complaint_call" jdbcType="VARCHAR" property="complaintCall" />
-    <result column="location" jdbcType="VARCHAR" property="location" />
-    <result column="support_hotline" jdbcType="VARCHAR" property="supportHotline" />
-    <result column="general_scope" jdbcType="VARCHAR" property="generalScope" />
-    <result column="statutory_time" jdbcType="VARCHAR" property="statutoryTime" />
-    <result column="commitment_time" jdbcType="VARCHAR" property="commitmentTime" />
-    <result column="validity_period" jdbcType="VARCHAR" property="validityPeriod" />
-    <result column="scope" jdbcType="VARCHAR" property="scope" />
-    <result column="dispatch" jdbcType="VARCHAR" property="dispatch" />
-    <result column="intermediary_service" jdbcType="VARCHAR" property="intermediaryService" />
-    <result column="field_connector" jdbcType="VARCHAR" property="fieldConnector" />
-    <result column="site_access_path" jdbcType="VARCHAR" property="siteAccessPath" />
-    <result column="online_connection" jdbcType="VARCHAR" property="onlineConnection" />
-    <result column="online_access_path" jdbcType="VARCHAR" property="onlineAccessPath" />
-    <result column="logistics_express" jdbcType="VARCHAR" property="logisticsExpress" />
-    <result column="express_form" jdbcType="VARCHAR" property="expressForm" />
-    <result column="support_reservation" jdbcType="VARCHAR" property="supportReservation" />
-    <result column="appointment_route" jdbcType="VARCHAR" property="appointmentRoute" />
-    <result column="quantitative_restrictions" jdbcType="VARCHAR" property="quantitativeRestrictions" />
-    <result column="quantitative_number" jdbcType="VARCHAR" property="quantitativeNumber" />
-    <result column="joint_office" jdbcType="VARCHAR" property="jointOffice" />
-    <result column="joint_department" jdbcType="VARCHAR" property="jointDepartment" />
-    <result column="operating_system" jdbcType="VARCHAR" property="operatingSystem" />
-    <result column="system_name" jdbcType="VARCHAR" property="systemName" />
-    <result column="processing_results" jdbcType="VARCHAR" property="processingResults" />
-    <result column="result_sample" jdbcType="VARCHAR" property="resultSample" />
-    <result column="setting_basis" jdbcType="VARCHAR" property="settingBasis" />
-    <result column="charge" jdbcType="VARCHAR" property="charge" />
-    <result column="charges" jdbcType="VARCHAR" property="charges" />
-    <result column="charge_basis" jdbcType="VARCHAR" property="chargeBasis" />
-    <result column="application_conditions" jdbcType="VARCHAR" property="applicationConditions" />
-    <result column="authority_division" jdbcType="VARCHAR" property="authorityDivision" />
-    <result column="qu" jdbcType="VARCHAR" property="qu" />
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.mapper.InformationSheetMapper" >
+  <resultMap id="BaseResultMap" type="com.example.model.InformationSheet" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="table_name" property="tableName" jdbcType="VARCHAR" />
+    <result column="item_name" property="itemName" jdbcType="VARCHAR" />
+    <result column="basic_coding" property="basicCoding" jdbcType="VARCHAR" />
+    <result column="child_name" property="childName" jdbcType="VARCHAR" />
+    <result column="type_name" property="typeName" jdbcType="VARCHAR" />
+    <result column="approval_category" property="approvalCategory" jdbcType="VARCHAR" />
+    <result column="service_object" property="serviceObject" jdbcType="VARCHAR" />
+    <result column="administrative_examination" property="administrativeExamination" jdbcType="VARCHAR" />
+    <result column="exercise_level" property="exerciseLevel" jdbcType="VARCHAR" />
+    <result column="handling_type" property="handlingType" jdbcType="VARCHAR" />
+    <result column="business_department" property="businessDepartment" jdbcType="VARCHAR" />
+    <result column="implementation_department" property="implementationDepartment" jdbcType="VARCHAR" />
+    <result column="implementation_coding" property="implementationCoding" jdbcType="VARCHAR" />
+    <result column="complaint_call" property="complaintCall" jdbcType="VARCHAR" />
+    <result column="location" property="location" jdbcType="VARCHAR" />
+    <result column="support_hotline" property="supportHotline" jdbcType="VARCHAR" />
+    <result column="general_scope" property="generalScope" jdbcType="VARCHAR" />
+    <result column="statutory_time" property="statutoryTime" jdbcType="VARCHAR" />
+    <result column="commitment_time" property="commitmentTime" jdbcType="VARCHAR" />
+    <result column="validity_period" property="validityPeriod" jdbcType="VARCHAR" />
+    <result column="scope" property="scope" jdbcType="VARCHAR" />
+    <result column="dispatch" property="dispatch" jdbcType="VARCHAR" />
+    <result column="intermediary_service" property="intermediaryService" jdbcType="VARCHAR" />
+    <result column="field_connector" property="fieldConnector" jdbcType="VARCHAR" />
+    <result column="site_access_path" property="siteAccessPath" jdbcType="VARCHAR" />
+    <result column="online_connection" property="onlineConnection" jdbcType="VARCHAR" />
+    <result column="online_access_path" property="onlineAccessPath" jdbcType="VARCHAR" />
+    <result column="logistics_express" property="logisticsExpress" jdbcType="VARCHAR" />
+    <result column="express_form" property="expressForm" jdbcType="VARCHAR" />
+    <result column="support_reservation" property="supportReservation" jdbcType="VARCHAR" />
+    <result column="appointment_route" property="appointmentRoute" jdbcType="VARCHAR" />
+    <result column="quantitative_restrictions" property="quantitativeRestrictions" jdbcType="VARCHAR" />
+    <result column="quantitative_number" property="quantitativeNumber" jdbcType="VARCHAR" />
+    <result column="joint_office" property="jointOffice" jdbcType="VARCHAR" />
+    <result column="joint_department" property="jointDepartment" jdbcType="VARCHAR" />
+    <result column="operating_system" property="operatingSystem" jdbcType="VARCHAR" />
+    <result column="system_name" property="systemName" jdbcType="VARCHAR" />
+    <result column="processing_results" property="processingResults" jdbcType="VARCHAR" />
+    <result column="result_sample" property="resultSample" jdbcType="VARCHAR" />
+    <result column="setting_basis" property="settingBasis" jdbcType="VARCHAR" />
+    <result column="charge" property="charge" jdbcType="VARCHAR" />
+    <result column="charges" property="charges" jdbcType="VARCHAR" />
+    <result column="charge_basis" property="chargeBasis" jdbcType="VARCHAR" />
+    <result column="application_conditions" property="applicationConditions" jdbcType="VARCHAR" />
+    <result column="authority_division" property="authorityDivision" jdbcType="VARCHAR" />
+    <result column="qu" property="qu" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Example_Where_Clause" >
+    <where >
+      <foreach collection="oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -79,25 +79,25 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
+  <sql id="Update_By_Example_Where_Clause" >
+    <where >
+      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
+        <if test="criteria.valid" >
+          <trim prefix="(" suffix=")" prefixOverrides="and" >
+            <foreach collection="criteria.criteria" item="criterion" >
+              <choose >
+                <when test="criterion.noValue" >
                   and ${criterion.condition}
                 </when>
-                <when test="criterion.singleValue">
+                <when test="criterion.singleValue" >
                   and ${criterion.condition} #{criterion.value}
                 </when>
-                <when test="criterion.betweenValue">
+                <when test="criterion.betweenValue" >
                   and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
                 </when>
-                <when test="criterion.listValue">
+                <when test="criterion.listValue" >
                   and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
                     #{listItem}
                   </foreach>
                 </when>
@@ -108,7 +108,7 @@
       </foreach>
     </where>
   </sql>
-  <sql id="Base_Column_List">
+  <sql id="Base_Column_List" >
     id, table_name, item_name, basic_coding, child_name, type_name, approval_category, 
     service_object, administrative_examination, exercise_level, handling_type, business_department, 
     implementation_department, implementation_coding, complaint_call, location, support_hotline, 
@@ -119,38 +119,38 @@
     processing_results, result_sample, setting_basis, charge, charges, charge_basis, 
     application_conditions, authority_division, qu
   </sql>
-  <select id="selectByExample" parameterType="com.example.model.InformationSheetExample" resultMap="BaseResultMap">
+  <select id="selectByExample" resultMap="BaseResultMap" parameterType="com.example.model.InformationSheetExample" >
     select
-    <if test="distinct">
+    <if test="distinct" >
       distinct
     </if>
     'true' as QUERYID,
     <include refid="Base_Column_List" />
     from information_sheet
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
-    <if test="orderByClause != null">
+    <if test="orderByClause != null" >
       order by ${orderByClause}
     </if>
   </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
     select 
     <include refid="Base_Column_List" />
     from information_sheet
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from information_sheet
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="com.example.model.InformationSheetExample">
+  <delete id="deleteByExample" parameterType="com.example.model.InformationSheetExample" >
     delete from information_sheet
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </delete>
-  <insert id="insert" parameterType="com.example.model.InformationSheet">
+  <insert id="insert" parameterType="com.example.model.InformationSheet" >
     insert into information_sheet (id, table_name, item_name, 
       basic_coding, child_name, type_name, 
       approval_category, service_object, administrative_examination, 
@@ -186,451 +186,451 @@
       #{chargeBasis,jdbcType=VARCHAR}, #{applicationConditions,jdbcType=VARCHAR}, #{authorityDivision,jdbcType=VARCHAR}, 
       #{qu,jdbcType=VARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.example.model.InformationSheet">
+  <insert id="insertSelective" parameterType="com.example.model.InformationSheet" >
     insert into information_sheet
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         id,
       </if>
-      <if test="tableName != null">
+      <if test="tableName != null" >
         table_name,
       </if>
-      <if test="itemName != null">
+      <if test="itemName != null" >
         item_name,
       </if>
-      <if test="basicCoding != null">
+      <if test="basicCoding != null" >
         basic_coding,
       </if>
-      <if test="childName != null">
+      <if test="childName != null" >
         child_name,
       </if>
-      <if test="typeName != null">
+      <if test="typeName != null" >
         type_name,
       </if>
-      <if test="approvalCategory != null">
+      <if test="approvalCategory != null" >
         approval_category,
       </if>
-      <if test="serviceObject != null">
+      <if test="serviceObject != null" >
         service_object,
       </if>
-      <if test="administrativeExamination != null">
+      <if test="administrativeExamination != null" >
         administrative_examination,
       </if>
-      <if test="exerciseLevel != null">
+      <if test="exerciseLevel != null" >
         exercise_level,
       </if>
-      <if test="handlingType != null">
+      <if test="handlingType != null" >
         handling_type,
       </if>
-      <if test="businessDepartment != null">
+      <if test="businessDepartment != null" >
         business_department,
       </if>
-      <if test="implementationDepartment != null">
+      <if test="implementationDepartment != null" >
         implementation_department,
       </if>
-      <if test="implementationCoding != null">
+      <if test="implementationCoding != null" >
         implementation_coding,
       </if>
-      <if test="complaintCall != null">
+      <if test="complaintCall != null" >
         complaint_call,
       </if>
-      <if test="location != null">
+      <if test="location != null" >
         location,
       </if>
-      <if test="supportHotline != null">
+      <if test="supportHotline != null" >
         support_hotline,
       </if>
-      <if test="generalScope != null">
+      <if test="generalScope != null" >
         general_scope,
       </if>
-      <if test="statutoryTime != null">
+      <if test="statutoryTime != null" >
         statutory_time,
       </if>
-      <if test="commitmentTime != null">
+      <if test="commitmentTime != null" >
         commitment_time,
       </if>
-      <if test="validityPeriod != null">
+      <if test="validityPeriod != null" >
         validity_period,
       </if>
-      <if test="scope != null">
+      <if test="scope != null" >
         scope,
       </if>
-      <if test="dispatch != null">
+      <if test="dispatch != null" >
         dispatch,
       </if>
-      <if test="intermediaryService != null">
+      <if test="intermediaryService != null" >
         intermediary_service,
       </if>
-      <if test="fieldConnector != null">
+      <if test="fieldConnector != null" >
         field_connector,
       </if>
-      <if test="siteAccessPath != null">
+      <if test="siteAccessPath != null" >
         site_access_path,
       </if>
-      <if test="onlineConnection != null">
+      <if test="onlineConnection != null" >
         online_connection,
       </if>
-      <if test="onlineAccessPath != null">
+      <if test="onlineAccessPath != null" >
         online_access_path,
       </if>
-      <if test="logisticsExpress != null">
+      <if test="logisticsExpress != null" >
         logistics_express,
       </if>
-      <if test="expressForm != null">
+      <if test="expressForm != null" >
         express_form,
       </if>
-      <if test="supportReservation != null">
+      <if test="supportReservation != null" >
         support_reservation,
       </if>
-      <if test="appointmentRoute != null">
+      <if test="appointmentRoute != null" >
         appointment_route,
       </if>
-      <if test="quantitativeRestrictions != null">
+      <if test="quantitativeRestrictions != null" >
         quantitative_restrictions,
       </if>
-      <if test="quantitativeNumber != null">
+      <if test="quantitativeNumber != null" >
         quantitative_number,
       </if>
-      <if test="jointOffice != null">
+      <if test="jointOffice != null" >
         joint_office,
       </if>
-      <if test="jointDepartment != null">
+      <if test="jointDepartment != null" >
         joint_department,
       </if>
-      <if test="operatingSystem != null">
+      <if test="operatingSystem != null" >
         operating_system,
       </if>
-      <if test="systemName != null">
+      <if test="systemName != null" >
         system_name,
       </if>
-      <if test="processingResults != null">
+      <if test="processingResults != null" >
         processing_results,
       </if>
-      <if test="resultSample != null">
+      <if test="resultSample != null" >
         result_sample,
       </if>
-      <if test="settingBasis != null">
+      <if test="settingBasis != null" >
         setting_basis,
       </if>
-      <if test="charge != null">
+      <if test="charge != null" >
         charge,
       </if>
-      <if test="charges != null">
+      <if test="charges != null" >
         charges,
       </if>
-      <if test="chargeBasis != null">
+      <if test="chargeBasis != null" >
         charge_basis,
       </if>
-      <if test="applicationConditions != null">
+      <if test="applicationConditions != null" >
         application_conditions,
       </if>
-      <if test="authorityDivision != null">
+      <if test="authorityDivision != null" >
         authority_division,
       </if>
-      <if test="qu != null">
+      <if test="qu != null" >
         qu,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="tableName != null">
+      <if test="tableName != null" >
         #{tableName,jdbcType=VARCHAR},
       </if>
-      <if test="itemName != null">
+      <if test="itemName != null" >
         #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="basicCoding != null">
+      <if test="basicCoding != null" >
         #{basicCoding,jdbcType=VARCHAR},
       </if>
-      <if test="childName != null">
+      <if test="childName != null" >
         #{childName,jdbcType=VARCHAR},
       </if>
-      <if test="typeName != null">
+      <if test="typeName != null" >
         #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="approvalCategory != null">
+      <if test="approvalCategory != null" >
         #{approvalCategory,jdbcType=VARCHAR},
       </if>
-      <if test="serviceObject != null">
+      <if test="serviceObject != null" >
         #{serviceObject,jdbcType=VARCHAR},
       </if>
-      <if test="administrativeExamination != null">
+      <if test="administrativeExamination != null" >
         #{administrativeExamination,jdbcType=VARCHAR},
       </if>
-      <if test="exerciseLevel != null">
+      <if test="exerciseLevel != null" >
         #{exerciseLevel,jdbcType=VARCHAR},
       </if>
-      <if test="handlingType != null">
+      <if test="handlingType != null" >
         #{handlingType,jdbcType=VARCHAR},
       </if>
-      <if test="businessDepartment != null">
+      <if test="businessDepartment != null" >
         #{businessDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="implementationDepartment != null">
+      <if test="implementationDepartment != null" >
         #{implementationDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="implementationCoding != null">
+      <if test="implementationCoding != null" >
         #{implementationCoding,jdbcType=VARCHAR},
       </if>
-      <if test="complaintCall != null">
+      <if test="complaintCall != null" >
         #{complaintCall,jdbcType=VARCHAR},
       </if>
-      <if test="location != null">
+      <if test="location != null" >
         #{location,jdbcType=VARCHAR},
       </if>
-      <if test="supportHotline != null">
+      <if test="supportHotline != null" >
         #{supportHotline,jdbcType=VARCHAR},
       </if>
-      <if test="generalScope != null">
+      <if test="generalScope != null" >
         #{generalScope,jdbcType=VARCHAR},
       </if>
-      <if test="statutoryTime != null">
+      <if test="statutoryTime != null" >
         #{statutoryTime,jdbcType=VARCHAR},
       </if>
-      <if test="commitmentTime != null">
+      <if test="commitmentTime != null" >
         #{commitmentTime,jdbcType=VARCHAR},
       </if>
-      <if test="validityPeriod != null">
+      <if test="validityPeriod != null" >
         #{validityPeriod,jdbcType=VARCHAR},
       </if>
-      <if test="scope != null">
+      <if test="scope != null" >
         #{scope,jdbcType=VARCHAR},
       </if>
-      <if test="dispatch != null">
+      <if test="dispatch != null" >
         #{dispatch,jdbcType=VARCHAR},
       </if>
-      <if test="intermediaryService != null">
+      <if test="intermediaryService != null" >
         #{intermediaryService,jdbcType=VARCHAR},
       </if>
-      <if test="fieldConnector != null">
+      <if test="fieldConnector != null" >
         #{fieldConnector,jdbcType=VARCHAR},
       </if>
-      <if test="siteAccessPath != null">
+      <if test="siteAccessPath != null" >
         #{siteAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="onlineConnection != null">
+      <if test="onlineConnection != null" >
         #{onlineConnection,jdbcType=VARCHAR},
       </if>
-      <if test="onlineAccessPath != null">
+      <if test="onlineAccessPath != null" >
         #{onlineAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="logisticsExpress != null">
+      <if test="logisticsExpress != null" >
         #{logisticsExpress,jdbcType=VARCHAR},
       </if>
-      <if test="expressForm != null">
+      <if test="expressForm != null" >
         #{expressForm,jdbcType=VARCHAR},
       </if>
-      <if test="supportReservation != null">
+      <if test="supportReservation != null" >
         #{supportReservation,jdbcType=VARCHAR},
       </if>
-      <if test="appointmentRoute != null">
+      <if test="appointmentRoute != null" >
         #{appointmentRoute,jdbcType=VARCHAR},
       </if>
-      <if test="quantitativeRestrictions != null">
+      <if test="quantitativeRestrictions != null" >
         #{quantitativeRestrictions,jdbcType=VARCHAR},
       </if>
-      <if test="quantitativeNumber != null">
+      <if test="quantitativeNumber != null" >
         #{quantitativeNumber,jdbcType=VARCHAR},
       </if>
-      <if test="jointOffice != null">
+      <if test="jointOffice != null" >
         #{jointOffice,jdbcType=VARCHAR},
       </if>
-      <if test="jointDepartment != null">
+      <if test="jointDepartment != null" >
         #{jointDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="operatingSystem != null">
+      <if test="operatingSystem != null" >
         #{operatingSystem,jdbcType=VARCHAR},
       </if>
-      <if test="systemName != null">
+      <if test="systemName != null" >
         #{systemName,jdbcType=VARCHAR},
       </if>
-      <if test="processingResults != null">
+      <if test="processingResults != null" >
         #{processingResults,jdbcType=VARCHAR},
       </if>
-      <if test="resultSample != null">
+      <if test="resultSample != null" >
         #{resultSample,jdbcType=VARCHAR},
       </if>
-      <if test="settingBasis != null">
+      <if test="settingBasis != null" >
         #{settingBasis,jdbcType=VARCHAR},
       </if>
-      <if test="charge != null">
+      <if test="charge != null" >
         #{charge,jdbcType=VARCHAR},
       </if>
-      <if test="charges != null">
+      <if test="charges != null" >
         #{charges,jdbcType=VARCHAR},
       </if>
-      <if test="chargeBasis != null">
+      <if test="chargeBasis != null" >
         #{chargeBasis,jdbcType=VARCHAR},
       </if>
-      <if test="applicationConditions != null">
+      <if test="applicationConditions != null" >
         #{applicationConditions,jdbcType=VARCHAR},
       </if>
-      <if test="authorityDivision != null">
+      <if test="authorityDivision != null" >
         #{authorityDivision,jdbcType=VARCHAR},
       </if>
-      <if test="qu != null">
+      <if test="qu != null" >
         #{qu,jdbcType=VARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="com.example.model.InformationSheetExample" resultType="java.lang.Integer">
+  <select id="countByExample" parameterType="com.example.model.InformationSheetExample" resultType="java.lang.Integer" >
     select count(*) from information_sheet
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Example_Where_Clause" />
     </if>
   </select>
-  <update id="updateByExampleSelective" parameterType="map">
+  <update id="updateByExampleSelective" parameterType="map" >
     update information_sheet
-    <set>
-      <if test="record.id != null">
+    <set >
+      <if test="record.id != null" >
         id = #{record.id,jdbcType=INTEGER},
       </if>
-      <if test="record.tableName != null">
+      <if test="record.tableName != null" >
         table_name = #{record.tableName,jdbcType=VARCHAR},
       </if>
-      <if test="record.itemName != null">
+      <if test="record.itemName != null" >
         item_name = #{record.itemName,jdbcType=VARCHAR},
       </if>
-      <if test="record.basicCoding != null">
+      <if test="record.basicCoding != null" >
         basic_coding = #{record.basicCoding,jdbcType=VARCHAR},
       </if>
-      <if test="record.childName != null">
+      <if test="record.childName != null" >
         child_name = #{record.childName,jdbcType=VARCHAR},
       </if>
-      <if test="record.typeName != null">
+      <if test="record.typeName != null" >
         type_name = #{record.typeName,jdbcType=VARCHAR},
       </if>
-      <if test="record.approvalCategory != null">
+      <if test="record.approvalCategory != null" >
         approval_category = #{record.approvalCategory,jdbcType=VARCHAR},
       </if>
-      <if test="record.serviceObject != null">
+      <if test="record.serviceObject != null" >
         service_object = #{record.serviceObject,jdbcType=VARCHAR},
       </if>
-      <if test="record.administrativeExamination != null">
+      <if test="record.administrativeExamination != null" >
         administrative_examination = #{record.administrativeExamination,jdbcType=VARCHAR},
       </if>
-      <if test="record.exerciseLevel != null">
+      <if test="record.exerciseLevel != null" >
         exercise_level = #{record.exerciseLevel,jdbcType=VARCHAR},
       </if>
-      <if test="record.handlingType != null">
+      <if test="record.handlingType != null" >
         handling_type = #{record.handlingType,jdbcType=VARCHAR},
       </if>
-      <if test="record.businessDepartment != null">
+      <if test="record.businessDepartment != null" >
         business_department = #{record.businessDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="record.implementationDepartment != null">
+      <if test="record.implementationDepartment != null" >
         implementation_department = #{record.implementationDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="record.implementationCoding != null">
+      <if test="record.implementationCoding != null" >
         implementation_coding = #{record.implementationCoding,jdbcType=VARCHAR},
       </if>
-      <if test="record.complaintCall != null">
+      <if test="record.complaintCall != null" >
         complaint_call = #{record.complaintCall,jdbcType=VARCHAR},
       </if>
-      <if test="record.location != null">
+      <if test="record.location != null" >
         location = #{record.location,jdbcType=VARCHAR},
       </if>
-      <if test="record.supportHotline != null">
+      <if test="record.supportHotline != null" >
         support_hotline = #{record.supportHotline,jdbcType=VARCHAR},
       </if>
-      <if test="record.generalScope != null">
+      <if test="record.generalScope != null" >
         general_scope = #{record.generalScope,jdbcType=VARCHAR},
       </if>
-      <if test="record.statutoryTime != null">
+      <if test="record.statutoryTime != null" >
         statutory_time = #{record.statutoryTime,jdbcType=VARCHAR},
       </if>
-      <if test="record.commitmentTime != null">
+      <if test="record.commitmentTime != null" >
         commitment_time = #{record.commitmentTime,jdbcType=VARCHAR},
       </if>
-      <if test="record.validityPeriod != null">
+      <if test="record.validityPeriod != null" >
         validity_period = #{record.validityPeriod,jdbcType=VARCHAR},
       </if>
-      <if test="record.scope != null">
+      <if test="record.scope != null" >
         scope = #{record.scope,jdbcType=VARCHAR},
       </if>
-      <if test="record.dispatch != null">
+      <if test="record.dispatch != null" >
         dispatch = #{record.dispatch,jdbcType=VARCHAR},
       </if>
-      <if test="record.intermediaryService != null">
+      <if test="record.intermediaryService != null" >
         intermediary_service = #{record.intermediaryService,jdbcType=VARCHAR},
       </if>
-      <if test="record.fieldConnector != null">
+      <if test="record.fieldConnector != null" >
         field_connector = #{record.fieldConnector,jdbcType=VARCHAR},
       </if>
-      <if test="record.siteAccessPath != null">
+      <if test="record.siteAccessPath != null" >
         site_access_path = #{record.siteAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="record.onlineConnection != null">
+      <if test="record.onlineConnection != null" >
         online_connection = #{record.onlineConnection,jdbcType=VARCHAR},
       </if>
-      <if test="record.onlineAccessPath != null">
+      <if test="record.onlineAccessPath != null" >
         online_access_path = #{record.onlineAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="record.logisticsExpress != null">
+      <if test="record.logisticsExpress != null" >
         logistics_express = #{record.logisticsExpress,jdbcType=VARCHAR},
       </if>
-      <if test="record.expressForm != null">
+      <if test="record.expressForm != null" >
         express_form = #{record.expressForm,jdbcType=VARCHAR},
       </if>
-      <if test="record.supportReservation != null">
+      <if test="record.supportReservation != null" >
         support_reservation = #{record.supportReservation,jdbcType=VARCHAR},
       </if>
-      <if test="record.appointmentRoute != null">
+      <if test="record.appointmentRoute != null" >
         appointment_route = #{record.appointmentRoute,jdbcType=VARCHAR},
       </if>
-      <if test="record.quantitativeRestrictions != null">
+      <if test="record.quantitativeRestrictions != null" >
         quantitative_restrictions = #{record.quantitativeRestrictions,jdbcType=VARCHAR},
       </if>
-      <if test="record.quantitativeNumber != null">
+      <if test="record.quantitativeNumber != null" >
         quantitative_number = #{record.quantitativeNumber,jdbcType=VARCHAR},
       </if>
-      <if test="record.jointOffice != null">
+      <if test="record.jointOffice != null" >
         joint_office = #{record.jointOffice,jdbcType=VARCHAR},
       </if>
-      <if test="record.jointDepartment != null">
+      <if test="record.jointDepartment != null" >
         joint_department = #{record.jointDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="record.operatingSystem != null">
+      <if test="record.operatingSystem != null" >
         operating_system = #{record.operatingSystem,jdbcType=VARCHAR},
       </if>
-      <if test="record.systemName != null">
+      <if test="record.systemName != null" >
         system_name = #{record.systemName,jdbcType=VARCHAR},
       </if>
-      <if test="record.processingResults != null">
+      <if test="record.processingResults != null" >
         processing_results = #{record.processingResults,jdbcType=VARCHAR},
       </if>
-      <if test="record.resultSample != null">
+      <if test="record.resultSample != null" >
         result_sample = #{record.resultSample,jdbcType=VARCHAR},
       </if>
-      <if test="record.settingBasis != null">
+      <if test="record.settingBasis != null" >
         setting_basis = #{record.settingBasis,jdbcType=VARCHAR},
       </if>
-      <if test="record.charge != null">
+      <if test="record.charge != null" >
         charge = #{record.charge,jdbcType=VARCHAR},
       </if>
-      <if test="record.charges != null">
+      <if test="record.charges != null" >
         charges = #{record.charges,jdbcType=VARCHAR},
       </if>
-      <if test="record.chargeBasis != null">
+      <if test="record.chargeBasis != null" >
         charge_basis = #{record.chargeBasis,jdbcType=VARCHAR},
       </if>
-      <if test="record.applicationConditions != null">
+      <if test="record.applicationConditions != null" >
         application_conditions = #{record.applicationConditions,jdbcType=VARCHAR},
       </if>
-      <if test="record.authorityDivision != null">
+      <if test="record.authorityDivision != null" >
         authority_division = #{record.authorityDivision,jdbcType=VARCHAR},
       </if>
-      <if test="record.qu != null">
+      <if test="record.qu != null" >
         qu = #{record.qu,jdbcType=VARCHAR},
       </if>
     </set>
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByExample" parameterType="map">
+  <update id="updateByExample" parameterType="map" >
     update information_sheet
     set id = #{record.id,jdbcType=INTEGER},
       table_name = #{record.tableName,jdbcType=VARCHAR},
@@ -679,1031 +679,155 @@
       application_conditions = #{record.applicationConditions,jdbcType=VARCHAR},
       authority_division = #{record.authorityDivision,jdbcType=VARCHAR},
       qu = #{record.qu,jdbcType=VARCHAR}
-    <if test="_parameter != null">
+    <if test="_parameter != null" >
       <include refid="Update_By_Example_Where_Clause" />
     </if>
   </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.InformationSheet">
+  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.InformationSheet" >
     update information_sheet
-    <set>
-      <if test="tableName != null">
+    <set >
+      <if test="tableName != null" >
         table_name = #{tableName,jdbcType=VARCHAR},
       </if>
-      <if test="itemName != null">
+      <if test="itemName != null" >
         item_name = #{itemName,jdbcType=VARCHAR},
       </if>
-      <if test="basicCoding != null">
+      <if test="basicCoding != null" >
         basic_coding = #{basicCoding,jdbcType=VARCHAR},
       </if>
-      <if test="childName != null">
+      <if test="childName != null" >
         child_name = #{childName,jdbcType=VARCHAR},
       </if>
-      <if test="typeName != null">
+      <if test="typeName != null" >
         type_name = #{typeName,jdbcType=VARCHAR},
       </if>
-      <if test="approvalCategory != null">
+      <if test="approvalCategory != null" >
         approval_category = #{approvalCategory,jdbcType=VARCHAR},
       </if>
-      <if test="serviceObject != null">
+      <if test="serviceObject != null" >
         service_object = #{serviceObject,jdbcType=VARCHAR},
       </if>
-      <if test="administrativeExamination != null">
+      <if test="administrativeExamination != null" >
         administrative_examination = #{administrativeExamination,jdbcType=VARCHAR},
       </if>
-      <if test="exerciseLevel != null">
+      <if test="exerciseLevel != null" >
         exercise_level = #{exerciseLevel,jdbcType=VARCHAR},
       </if>
-      <if test="handlingType != null">
+      <if test="handlingType != null" >
         handling_type = #{handlingType,jdbcType=VARCHAR},
       </if>
-      <if test="businessDepartment != null">
+      <if test="businessDepartment != null" >
         business_department = #{businessDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="implementationDepartment != null">
+      <if test="implementationDepartment != null" >
         implementation_department = #{implementationDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="implementationCoding != null">
+      <if test="implementationCoding != null" >
         implementation_coding = #{implementationCoding,jdbcType=VARCHAR},
       </if>
-      <if test="complaintCall != null">
+      <if test="complaintCall != null" >
         complaint_call = #{complaintCall,jdbcType=VARCHAR},
       </if>
-      <if test="location != null">
+      <if test="location != null" >
         location = #{location,jdbcType=VARCHAR},
       </if>
-      <if test="supportHotline != null">
+      <if test="supportHotline != null" >
         support_hotline = #{supportHotline,jdbcType=VARCHAR},
       </if>
-      <if test="generalScope != null">
+      <if test="generalScope != null" >
         general_scope = #{generalScope,jdbcType=VARCHAR},
       </if>
-      <if test="statutoryTime != null">
+      <if test="statutoryTime != null" >
         statutory_time = #{statutoryTime,jdbcType=VARCHAR},
       </if>
-      <if test="commitmentTime != null">
+      <if test="commitmentTime != null" >
         commitment_time = #{commitmentTime,jdbcType=VARCHAR},
       </if>
-      <if test="validityPeriod != null">
+      <if test="validityPeriod != null" >
         validity_period = #{validityPeriod,jdbcType=VARCHAR},
       </if>
-      <if test="scope != null">
+      <if test="scope != null" >
         scope = #{scope,jdbcType=VARCHAR},
       </if>
-      <if test="dispatch != null">
+      <if test="dispatch != null" >
         dispatch = #{dispatch,jdbcType=VARCHAR},
       </if>
-      <if test="intermediaryService != null">
+      <if test="intermediaryService != null" >
         intermediary_service = #{intermediaryService,jdbcType=VARCHAR},
       </if>
-      <if test="fieldConnector != null">
+      <if test="fieldConnector != null" >
         field_connector = #{fieldConnector,jdbcType=VARCHAR},
       </if>
-      <if test="siteAccessPath != null">
+      <if test="siteAccessPath != null" >
         site_access_path = #{siteAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="onlineConnection != null">
+      <if test="onlineConnection != null" >
         online_connection = #{onlineConnection,jdbcType=VARCHAR},
       </if>
-      <if test="onlineAccessPath != null">
+      <if test="onlineAccessPath != null" >
         online_access_path = #{onlineAccessPath,jdbcType=VARCHAR},
       </if>
-      <if test="logisticsExpress != null">
+      <if test="logisticsExpress != null" >
         logistics_express = #{logisticsExpress,jdbcType=VARCHAR},
       </if>
-      <if test="expressForm != null">
+      <if test="expressForm != null" >
         express_form = #{expressForm,jdbcType=VARCHAR},
       </if>
-      <if test="supportReservation != null">
+      <if test="supportReservation != null" >
         support_reservation = #{supportReservation,jdbcType=VARCHAR},
       </if>
-      <if test="appointmentRoute != null">
+      <if test="appointmentRoute != null" >
         appointment_route = #{appointmentRoute,jdbcType=VARCHAR},
       </if>
-      <if test="quantitativeRestrictions != null">
+      <if test="quantitativeRestrictions != null" >
         quantitative_restrictions = #{quantitativeRestrictions,jdbcType=VARCHAR},
       </if>
-      <if test="quantitativeNumber != null">
+      <if test="quantitativeNumber != null" >
         quantitative_number = #{quantitativeNumber,jdbcType=VARCHAR},
       </if>
-      <if test="jointOffice != null">
+      <if test="jointOffice != null" >
         joint_office = #{jointOffice,jdbcType=VARCHAR},
       </if>
-      <if test="jointDepartment != null">
+      <if test="jointDepartment != null" >
         joint_department = #{jointDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="operatingSystem != null">
+      <if test="operatingSystem != null" >
         operating_system = #{operatingSystem,jdbcType=VARCHAR},
       </if>
-      <if test="systemName != null">
+      <if test="systemName != null" >
         system_name = #{systemName,jdbcType=VARCHAR},
       </if>
-      <if test="processingResults != null">
+      <if test="processingResults != null" >
         processing_results = #{processingResults,jdbcType=VARCHAR},
       </if>
-      <if test="resultSample != null">
+      <if test="resultSample != null" >
         result_sample = #{resultSample,jdbcType=VARCHAR},
       </if>
-      <if test="settingBasis != null">
+      <if test="settingBasis != null" >
         setting_basis = #{settingBasis,jdbcType=VARCHAR},
       </if>
-      <if test="charge != null">
+      <if test="charge != null" >
         charge = #{charge,jdbcType=VARCHAR},
       </if>
-      <if test="charges != null">
+      <if test="charges != null" >
         charges = #{charges,jdbcType=VARCHAR},
       </if>
-      <if test="chargeBasis != null">
+      <if test="chargeBasis != null" >
         charge_basis = #{chargeBasis,jdbcType=VARCHAR},
       </if>
-      <if test="applicationConditions != null">
+      <if test="applicationConditions != null" >
         application_conditions = #{applicationConditions,jdbcType=VARCHAR},
       </if>
-      <if test="authorityDivision != null">
+      <if test="authorityDivision != null" >
         authority_division = #{authorityDivision,jdbcType=VARCHAR},
       </if>
-      <if test="qu != null">
+      <if test="qu != null" >
         qu = #{qu,jdbcType=VARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.model.InformationSheet">
-    update information_sheet
-    set table_name = #{tableName,jdbcType=VARCHAR},
-      item_name = #{itemName,jdbcType=VARCHAR},
-      basic_coding = #{basicCoding,jdbcType=VARCHAR},
-      child_name = #{childName,jdbcType=VARCHAR},
-      type_name = #{typeName,jdbcType=VARCHAR},
-      approval_category = #{approvalCategory,jdbcType=VARCHAR},
-      service_object = #{serviceObject,jdbcType=VARCHAR},
-      administrative_examination = #{administrativeExamination,jdbcType=VARCHAR},
-      exercise_level = #{exerciseLevel,jdbcType=VARCHAR},
-      handling_type = #{handlingType,jdbcType=VARCHAR},
-      business_department = #{businessDepartment,jdbcType=VARCHAR},
-      implementation_department = #{implementationDepartment,jdbcType=VARCHAR},
-      implementation_coding = #{implementationCoding,jdbcType=VARCHAR},
-      complaint_call = #{complaintCall,jdbcType=VARCHAR},
-      location = #{location,jdbcType=VARCHAR},
-      support_hotline = #{supportHotline,jdbcType=VARCHAR},
-      general_scope = #{generalScope,jdbcType=VARCHAR},
-      statutory_time = #{statutoryTime,jdbcType=VARCHAR},
-      commitment_time = #{commitmentTime,jdbcType=VARCHAR},
-      validity_period = #{validityPeriod,jdbcType=VARCHAR},
-      scope = #{scope,jdbcType=VARCHAR},
-      dispatch = #{dispatch,jdbcType=VARCHAR},
-      intermediary_service = #{intermediaryService,jdbcType=VARCHAR},
-      field_connector = #{fieldConnector,jdbcType=VARCHAR},
-      site_access_path = #{siteAccessPath,jdbcType=VARCHAR},
-      online_connection = #{onlineConnection,jdbcType=VARCHAR},
-      online_access_path = #{onlineAccessPath,jdbcType=VARCHAR},
-      logistics_express = #{logisticsExpress,jdbcType=VARCHAR},
-      express_form = #{expressForm,jdbcType=VARCHAR},
-      support_reservation = #{supportReservation,jdbcType=VARCHAR},
-      appointment_route = #{appointmentRoute,jdbcType=VARCHAR},
-      quantitative_restrictions = #{quantitativeRestrictions,jdbcType=VARCHAR},
-      quantitative_number = #{quantitativeNumber,jdbcType=VARCHAR},
-      joint_office = #{jointOffice,jdbcType=VARCHAR},
-      joint_department = #{jointDepartment,jdbcType=VARCHAR},
-      operating_system = #{operatingSystem,jdbcType=VARCHAR},
-      system_name = #{systemName,jdbcType=VARCHAR},
-      processing_results = #{processingResults,jdbcType=VARCHAR},
-      result_sample = #{resultSample,jdbcType=VARCHAR},
-      setting_basis = #{settingBasis,jdbcType=VARCHAR},
-      charge = #{charge,jdbcType=VARCHAR},
-      charges = #{charges,jdbcType=VARCHAR},
-      charge_basis = #{chargeBasis,jdbcType=VARCHAR},
-      application_conditions = #{applicationConditions,jdbcType=VARCHAR},
-      authority_division = #{authorityDivision,jdbcType=VARCHAR},
-      qu = #{qu,jdbcType=VARCHAR}
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <resultMap id="BaseResultMap" type="com.example.model.InformationSheet">
-    <id column="id" jdbcType="INTEGER" property="id" />
-    <result column="table_name" jdbcType="VARCHAR" property="tableName" />
-    <result column="item_name" jdbcType="VARCHAR" property="itemName" />
-    <result column="basic_coding" jdbcType="VARCHAR" property="basicCoding" />
-    <result column="child_name" jdbcType="VARCHAR" property="childName" />
-    <result column="type_name" jdbcType="VARCHAR" property="typeName" />
-    <result column="approval_category" jdbcType="VARCHAR" property="approvalCategory" />
-    <result column="service_object" jdbcType="VARCHAR" property="serviceObject" />
-    <result column="administrative_examination" jdbcType="VARCHAR" property="administrativeExamination" />
-    <result column="exercise_level" jdbcType="VARCHAR" property="exerciseLevel" />
-    <result column="handling_type" jdbcType="VARCHAR" property="handlingType" />
-    <result column="business_department" jdbcType="VARCHAR" property="businessDepartment" />
-    <result column="implementation_department" jdbcType="VARCHAR" property="implementationDepartment" />
-    <result column="implementation_coding" jdbcType="VARCHAR" property="implementationCoding" />
-    <result column="complaint_call" jdbcType="VARCHAR" property="complaintCall" />
-    <result column="location" jdbcType="VARCHAR" property="location" />
-    <result column="support_hotline" jdbcType="VARCHAR" property="supportHotline" />
-    <result column="general_scope" jdbcType="VARCHAR" property="generalScope" />
-    <result column="statutory_time" jdbcType="VARCHAR" property="statutoryTime" />
-    <result column="commitment_time" jdbcType="VARCHAR" property="commitmentTime" />
-    <result column="validity_period" jdbcType="VARCHAR" property="validityPeriod" />
-    <result column="scope" jdbcType="VARCHAR" property="scope" />
-    <result column="dispatch" jdbcType="VARCHAR" property="dispatch" />
-    <result column="intermediary_service" jdbcType="VARCHAR" property="intermediaryService" />
-    <result column="field_connector" jdbcType="VARCHAR" property="fieldConnector" />
-    <result column="site_access_path" jdbcType="VARCHAR" property="siteAccessPath" />
-    <result column="online_connection" jdbcType="VARCHAR" property="onlineConnection" />
-    <result column="online_access_path" jdbcType="VARCHAR" property="onlineAccessPath" />
-    <result column="logistics_express" jdbcType="VARCHAR" property="logisticsExpress" />
-    <result column="express_form" jdbcType="VARCHAR" property="expressForm" />
-    <result column="support_reservation" jdbcType="VARCHAR" property="supportReservation" />
-    <result column="appointment_route" jdbcType="VARCHAR" property="appointmentRoute" />
-    <result column="quantitative_restrictions" jdbcType="VARCHAR" property="quantitativeRestrictions" />
-    <result column="quantitative_number" jdbcType="VARCHAR" property="quantitativeNumber" />
-    <result column="joint_office" jdbcType="VARCHAR" property="jointOffice" />
-    <result column="joint_department" jdbcType="VARCHAR" property="jointDepartment" />
-    <result column="operating_system" jdbcType="VARCHAR" property="operatingSystem" />
-    <result column="system_name" jdbcType="VARCHAR" property="systemName" />
-    <result column="processing_results" jdbcType="VARCHAR" property="processingResults" />
-    <result column="result_sample" jdbcType="VARCHAR" property="resultSample" />
-    <result column="setting_basis" jdbcType="VARCHAR" property="settingBasis" />
-    <result column="charge" jdbcType="VARCHAR" property="charge" />
-    <result column="charges" jdbcType="VARCHAR" property="charges" />
-    <result column="charge_basis" jdbcType="VARCHAR" property="chargeBasis" />
-    <result column="application_conditions" jdbcType="VARCHAR" property="applicationConditions" />
-    <result column="authority_division" jdbcType="VARCHAR" property="authorityDivision" />
-    <result column="qu" jdbcType="VARCHAR" property="qu" />
-  </resultMap>
-  <sql id="Example_Where_Clause">
-    <where>
-      <foreach collection="oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause">
-    <where>
-      <foreach collection="example.oredCriteria" item="criteria" separator="or">
-        <if test="criteria.valid">
-          <trim prefix="(" prefixOverrides="and" suffix=")">
-            <foreach collection="criteria.criteria" item="criterion">
-              <choose>
-                <when test="criterion.noValue">
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue">
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue">
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue">
-                  and ${criterion.condition}
-                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List">
-    id, table_name, item_name, basic_coding, child_name, type_name, approval_category, 
-    service_object, administrative_examination, exercise_level, handling_type, business_department, 
-    implementation_department, implementation_coding, complaint_call, location, support_hotline, 
-    general_scope, statutory_time, commitment_time, validity_period, scope, dispatch, 
-    intermediary_service, field_connector, site_access_path, online_connection, online_access_path, 
-    logistics_express, express_form, support_reservation, appointment_route, quantitative_restrictions, 
-    quantitative_number, joint_office, joint_department, operating_system, system_name, 
-    processing_results, result_sample, setting_basis, charge, charges, charge_basis, 
-    application_conditions, authority_division, qu
-  </sql>
-  <select id="selectByExample" parameterType="com.example.model.InformationSheetExample" resultMap="BaseResultMap">
-    select
-    <if test="distinct">
-      distinct
-    </if>
-    'true' as QUERYID,
-    <include refid="Base_Column_List" />
-    from information_sheet
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null">
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
-    select 
-    <include refid="Base_Column_List" />
-    from information_sheet
-    where id = #{id,jdbcType=INTEGER}
-  </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
-    delete from information_sheet
-    where id = #{id,jdbcType=INTEGER}
-  </delete>
-  <delete id="deleteByExample" parameterType="com.example.model.InformationSheetExample">
-    delete from information_sheet
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="com.example.model.InformationSheet">
-    insert into information_sheet (id, table_name, item_name, 
-      basic_coding, child_name, type_name, 
-      approval_category, service_object, administrative_examination, 
-      exercise_level, handling_type, business_department, 
-      implementation_department, implementation_coding, 
-      complaint_call, location, support_hotline, 
-      general_scope, statutory_time, commitment_time, 
-      validity_period, scope, dispatch, 
-      intermediary_service, field_connector, site_access_path, 
-      online_connection, online_access_path, logistics_express, 
-      express_form, support_reservation, appointment_route, 
-      quantitative_restrictions, quantitative_number, 
-      joint_office, joint_department, operating_system, 
-      system_name, processing_results, result_sample, 
-      setting_basis, charge, charges, 
-      charge_basis, application_conditions, authority_division, 
-      qu)
-    values (#{id,jdbcType=INTEGER}, #{tableName,jdbcType=VARCHAR}, #{itemName,jdbcType=VARCHAR}, 
-      #{basicCoding,jdbcType=VARCHAR}, #{childName,jdbcType=VARCHAR}, #{typeName,jdbcType=VARCHAR}, 
-      #{approvalCategory,jdbcType=VARCHAR}, #{serviceObject,jdbcType=VARCHAR}, #{administrativeExamination,jdbcType=VARCHAR}, 
-      #{exerciseLevel,jdbcType=VARCHAR}, #{handlingType,jdbcType=VARCHAR}, #{businessDepartment,jdbcType=VARCHAR}, 
-      #{implementationDepartment,jdbcType=VARCHAR}, #{implementationCoding,jdbcType=VARCHAR}, 
-      #{complaintCall,jdbcType=VARCHAR}, #{location,jdbcType=VARCHAR}, #{supportHotline,jdbcType=VARCHAR}, 
-      #{generalScope,jdbcType=VARCHAR}, #{statutoryTime,jdbcType=VARCHAR}, #{commitmentTime,jdbcType=VARCHAR}, 
-      #{validityPeriod,jdbcType=VARCHAR}, #{scope,jdbcType=VARCHAR}, #{dispatch,jdbcType=VARCHAR}, 
-      #{intermediaryService,jdbcType=VARCHAR}, #{fieldConnector,jdbcType=VARCHAR}, #{siteAccessPath,jdbcType=VARCHAR}, 
-      #{onlineConnection,jdbcType=VARCHAR}, #{onlineAccessPath,jdbcType=VARCHAR}, #{logisticsExpress,jdbcType=VARCHAR}, 
-      #{expressForm,jdbcType=VARCHAR}, #{supportReservation,jdbcType=VARCHAR}, #{appointmentRoute,jdbcType=VARCHAR}, 
-      #{quantitativeRestrictions,jdbcType=VARCHAR}, #{quantitativeNumber,jdbcType=VARCHAR}, 
-      #{jointOffice,jdbcType=VARCHAR}, #{jointDepartment,jdbcType=VARCHAR}, #{operatingSystem,jdbcType=VARCHAR}, 
-      #{systemName,jdbcType=VARCHAR}, #{processingResults,jdbcType=VARCHAR}, #{resultSample,jdbcType=VARCHAR}, 
-      #{settingBasis,jdbcType=VARCHAR}, #{charge,jdbcType=VARCHAR}, #{charges,jdbcType=VARCHAR}, 
-      #{chargeBasis,jdbcType=VARCHAR}, #{applicationConditions,jdbcType=VARCHAR}, #{authorityDivision,jdbcType=VARCHAR}, 
-      #{qu,jdbcType=VARCHAR})
-  </insert>
-  <insert id="insertSelective" parameterType="com.example.model.InformationSheet">
-    insert into information_sheet
-    <trim prefix="(" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        id,
-      </if>
-      <if test="tableName != null">
-        table_name,
-      </if>
-      <if test="itemName != null">
-        item_name,
-      </if>
-      <if test="basicCoding != null">
-        basic_coding,
-      </if>
-      <if test="childName != null">
-        child_name,
-      </if>
-      <if test="typeName != null">
-        type_name,
-      </if>
-      <if test="approvalCategory != null">
-        approval_category,
-      </if>
-      <if test="serviceObject != null">
-        service_object,
-      </if>
-      <if test="administrativeExamination != null">
-        administrative_examination,
-      </if>
-      <if test="exerciseLevel != null">
-        exercise_level,
-      </if>
-      <if test="handlingType != null">
-        handling_type,
-      </if>
-      <if test="businessDepartment != null">
-        business_department,
-      </if>
-      <if test="implementationDepartment != null">
-        implementation_department,
-      </if>
-      <if test="implementationCoding != null">
-        implementation_coding,
-      </if>
-      <if test="complaintCall != null">
-        complaint_call,
-      </if>
-      <if test="location != null">
-        location,
-      </if>
-      <if test="supportHotline != null">
-        support_hotline,
-      </if>
-      <if test="generalScope != null">
-        general_scope,
-      </if>
-      <if test="statutoryTime != null">
-        statutory_time,
-      </if>
-      <if test="commitmentTime != null">
-        commitment_time,
-      </if>
-      <if test="validityPeriod != null">
-        validity_period,
-      </if>
-      <if test="scope != null">
-        scope,
-      </if>
-      <if test="dispatch != null">
-        dispatch,
-      </if>
-      <if test="intermediaryService != null">
-        intermediary_service,
-      </if>
-      <if test="fieldConnector != null">
-        field_connector,
-      </if>
-      <if test="siteAccessPath != null">
-        site_access_path,
-      </if>
-      <if test="onlineConnection != null">
-        online_connection,
-      </if>
-      <if test="onlineAccessPath != null">
-        online_access_path,
-      </if>
-      <if test="logisticsExpress != null">
-        logistics_express,
-      </if>
-      <if test="expressForm != null">
-        express_form,
-      </if>
-      <if test="supportReservation != null">
-        support_reservation,
-      </if>
-      <if test="appointmentRoute != null">
-        appointment_route,
-      </if>
-      <if test="quantitativeRestrictions != null">
-        quantitative_restrictions,
-      </if>
-      <if test="quantitativeNumber != null">
-        quantitative_number,
-      </if>
-      <if test="jointOffice != null">
-        joint_office,
-      </if>
-      <if test="jointDepartment != null">
-        joint_department,
-      </if>
-      <if test="operatingSystem != null">
-        operating_system,
-      </if>
-      <if test="systemName != null">
-        system_name,
-      </if>
-      <if test="processingResults != null">
-        processing_results,
-      </if>
-      <if test="resultSample != null">
-        result_sample,
-      </if>
-      <if test="settingBasis != null">
-        setting_basis,
-      </if>
-      <if test="charge != null">
-        charge,
-      </if>
-      <if test="charges != null">
-        charges,
-      </if>
-      <if test="chargeBasis != null">
-        charge_basis,
-      </if>
-      <if test="applicationConditions != null">
-        application_conditions,
-      </if>
-      <if test="authorityDivision != null">
-        authority_division,
-      </if>
-      <if test="qu != null">
-        qu,
-      </if>
-    </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides=",">
-      <if test="id != null">
-        #{id,jdbcType=INTEGER},
-      </if>
-      <if test="tableName != null">
-        #{tableName,jdbcType=VARCHAR},
-      </if>
-      <if test="itemName != null">
-        #{itemName,jdbcType=VARCHAR},
-      </if>
-      <if test="basicCoding != null">
-        #{basicCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="childName != null">
-        #{childName,jdbcType=VARCHAR},
-      </if>
-      <if test="typeName != null">
-        #{typeName,jdbcType=VARCHAR},
-      </if>
-      <if test="approvalCategory != null">
-        #{approvalCategory,jdbcType=VARCHAR},
-      </if>
-      <if test="serviceObject != null">
-        #{serviceObject,jdbcType=VARCHAR},
-      </if>
-      <if test="administrativeExamination != null">
-        #{administrativeExamination,jdbcType=VARCHAR},
-      </if>
-      <if test="exerciseLevel != null">
-        #{exerciseLevel,jdbcType=VARCHAR},
-      </if>
-      <if test="handlingType != null">
-        #{handlingType,jdbcType=VARCHAR},
-      </if>
-      <if test="businessDepartment != null">
-        #{businessDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="implementationDepartment != null">
-        #{implementationDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="implementationCoding != null">
-        #{implementationCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="complaintCall != null">
-        #{complaintCall,jdbcType=VARCHAR},
-      </if>
-      <if test="location != null">
-        #{location,jdbcType=VARCHAR},
-      </if>
-      <if test="supportHotline != null">
-        #{supportHotline,jdbcType=VARCHAR},
-      </if>
-      <if test="generalScope != null">
-        #{generalScope,jdbcType=VARCHAR},
-      </if>
-      <if test="statutoryTime != null">
-        #{statutoryTime,jdbcType=VARCHAR},
-      </if>
-      <if test="commitmentTime != null">
-        #{commitmentTime,jdbcType=VARCHAR},
-      </if>
-      <if test="validityPeriod != null">
-        #{validityPeriod,jdbcType=VARCHAR},
-      </if>
-      <if test="scope != null">
-        #{scope,jdbcType=VARCHAR},
-      </if>
-      <if test="dispatch != null">
-        #{dispatch,jdbcType=VARCHAR},
-      </if>
-      <if test="intermediaryService != null">
-        #{intermediaryService,jdbcType=VARCHAR},
-      </if>
-      <if test="fieldConnector != null">
-        #{fieldConnector,jdbcType=VARCHAR},
-      </if>
-      <if test="siteAccessPath != null">
-        #{siteAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="onlineConnection != null">
-        #{onlineConnection,jdbcType=VARCHAR},
-      </if>
-      <if test="onlineAccessPath != null">
-        #{onlineAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="logisticsExpress != null">
-        #{logisticsExpress,jdbcType=VARCHAR},
-      </if>
-      <if test="expressForm != null">
-        #{expressForm,jdbcType=VARCHAR},
-      </if>
-      <if test="supportReservation != null">
-        #{supportReservation,jdbcType=VARCHAR},
-      </if>
-      <if test="appointmentRoute != null">
-        #{appointmentRoute,jdbcType=VARCHAR},
-      </if>
-      <if test="quantitativeRestrictions != null">
-        #{quantitativeRestrictions,jdbcType=VARCHAR},
-      </if>
-      <if test="quantitativeNumber != null">
-        #{quantitativeNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="jointOffice != null">
-        #{jointOffice,jdbcType=VARCHAR},
-      </if>
-      <if test="jointDepartment != null">
-        #{jointDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="operatingSystem != null">
-        #{operatingSystem,jdbcType=VARCHAR},
-      </if>
-      <if test="systemName != null">
-        #{systemName,jdbcType=VARCHAR},
-      </if>
-      <if test="processingResults != null">
-        #{processingResults,jdbcType=VARCHAR},
-      </if>
-      <if test="resultSample != null">
-        #{resultSample,jdbcType=VARCHAR},
-      </if>
-      <if test="settingBasis != null">
-        #{settingBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="charge != null">
-        #{charge,jdbcType=VARCHAR},
-      </if>
-      <if test="charges != null">
-        #{charges,jdbcType=VARCHAR},
-      </if>
-      <if test="chargeBasis != null">
-        #{chargeBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="applicationConditions != null">
-        #{applicationConditions,jdbcType=VARCHAR},
-      </if>
-      <if test="authorityDivision != null">
-        #{authorityDivision,jdbcType=VARCHAR},
-      </if>
-      <if test="qu != null">
-        #{qu,jdbcType=VARCHAR},
-      </if>
-    </trim>
-  </insert>
-  <select id="countByExample" parameterType="com.example.model.InformationSheetExample" resultType="java.lang.Integer">
-    select count(*) from information_sheet
-    <if test="_parameter != null">
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map">
-    update information_sheet
-    <set>
-      <if test="record.id != null">
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.tableName != null">
-        table_name = #{record.tableName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.itemName != null">
-        item_name = #{record.itemName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.basicCoding != null">
-        basic_coding = #{record.basicCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="record.childName != null">
-        child_name = #{record.childName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.typeName != null">
-        type_name = #{record.typeName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.approvalCategory != null">
-        approval_category = #{record.approvalCategory,jdbcType=VARCHAR},
-      </if>
-      <if test="record.serviceObject != null">
-        service_object = #{record.serviceObject,jdbcType=VARCHAR},
-      </if>
-      <if test="record.administrativeExamination != null">
-        administrative_examination = #{record.administrativeExamination,jdbcType=VARCHAR},
-      </if>
-      <if test="record.exerciseLevel != null">
-        exercise_level = #{record.exerciseLevel,jdbcType=VARCHAR},
-      </if>
-      <if test="record.handlingType != null">
-        handling_type = #{record.handlingType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.businessDepartment != null">
-        business_department = #{record.businessDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="record.implementationDepartment != null">
-        implementation_department = #{record.implementationDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="record.implementationCoding != null">
-        implementation_coding = #{record.implementationCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="record.complaintCall != null">
-        complaint_call = #{record.complaintCall,jdbcType=VARCHAR},
-      </if>
-      <if test="record.location != null">
-        location = #{record.location,jdbcType=VARCHAR},
-      </if>
-      <if test="record.supportHotline != null">
-        support_hotline = #{record.supportHotline,jdbcType=VARCHAR},
-      </if>
-      <if test="record.generalScope != null">
-        general_scope = #{record.generalScope,jdbcType=VARCHAR},
-      </if>
-      <if test="record.statutoryTime != null">
-        statutory_time = #{record.statutoryTime,jdbcType=VARCHAR},
-      </if>
-      <if test="record.commitmentTime != null">
-        commitment_time = #{record.commitmentTime,jdbcType=VARCHAR},
-      </if>
-      <if test="record.validityPeriod != null">
-        validity_period = #{record.validityPeriod,jdbcType=VARCHAR},
-      </if>
-      <if test="record.scope != null">
-        scope = #{record.scope,jdbcType=VARCHAR},
-      </if>
-      <if test="record.dispatch != null">
-        dispatch = #{record.dispatch,jdbcType=VARCHAR},
-      </if>
-      <if test="record.intermediaryService != null">
-        intermediary_service = #{record.intermediaryService,jdbcType=VARCHAR},
-      </if>
-      <if test="record.fieldConnector != null">
-        field_connector = #{record.fieldConnector,jdbcType=VARCHAR},
-      </if>
-      <if test="record.siteAccessPath != null">
-        site_access_path = #{record.siteAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="record.onlineConnection != null">
-        online_connection = #{record.onlineConnection,jdbcType=VARCHAR},
-      </if>
-      <if test="record.onlineAccessPath != null">
-        online_access_path = #{record.onlineAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="record.logisticsExpress != null">
-        logistics_express = #{record.logisticsExpress,jdbcType=VARCHAR},
-      </if>
-      <if test="record.expressForm != null">
-        express_form = #{record.expressForm,jdbcType=VARCHAR},
-      </if>
-      <if test="record.supportReservation != null">
-        support_reservation = #{record.supportReservation,jdbcType=VARCHAR},
-      </if>
-      <if test="record.appointmentRoute != null">
-        appointment_route = #{record.appointmentRoute,jdbcType=VARCHAR},
-      </if>
-      <if test="record.quantitativeRestrictions != null">
-        quantitative_restrictions = #{record.quantitativeRestrictions,jdbcType=VARCHAR},
-      </if>
-      <if test="record.quantitativeNumber != null">
-        quantitative_number = #{record.quantitativeNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="record.jointOffice != null">
-        joint_office = #{record.jointOffice,jdbcType=VARCHAR},
-      </if>
-      <if test="record.jointDepartment != null">
-        joint_department = #{record.jointDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="record.operatingSystem != null">
-        operating_system = #{record.operatingSystem,jdbcType=VARCHAR},
-      </if>
-      <if test="record.systemName != null">
-        system_name = #{record.systemName,jdbcType=VARCHAR},
-      </if>
-      <if test="record.processingResults != null">
-        processing_results = #{record.processingResults,jdbcType=VARCHAR},
-      </if>
-      <if test="record.resultSample != null">
-        result_sample = #{record.resultSample,jdbcType=VARCHAR},
-      </if>
-      <if test="record.settingBasis != null">
-        setting_basis = #{record.settingBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="record.charge != null">
-        charge = #{record.charge,jdbcType=VARCHAR},
-      </if>
-      <if test="record.charges != null">
-        charges = #{record.charges,jdbcType=VARCHAR},
-      </if>
-      <if test="record.chargeBasis != null">
-        charge_basis = #{record.chargeBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="record.applicationConditions != null">
-        application_conditions = #{record.applicationConditions,jdbcType=VARCHAR},
-      </if>
-      <if test="record.authorityDivision != null">
-        authority_division = #{record.authorityDivision,jdbcType=VARCHAR},
-      </if>
-      <if test="record.qu != null">
-        qu = #{record.qu,jdbcType=VARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map">
-    update information_sheet
-    set id = #{record.id,jdbcType=INTEGER},
-      table_name = #{record.tableName,jdbcType=VARCHAR},
-      item_name = #{record.itemName,jdbcType=VARCHAR},
-      basic_coding = #{record.basicCoding,jdbcType=VARCHAR},
-      child_name = #{record.childName,jdbcType=VARCHAR},
-      type_name = #{record.typeName,jdbcType=VARCHAR},
-      approval_category = #{record.approvalCategory,jdbcType=VARCHAR},
-      service_object = #{record.serviceObject,jdbcType=VARCHAR},
-      administrative_examination = #{record.administrativeExamination,jdbcType=VARCHAR},
-      exercise_level = #{record.exerciseLevel,jdbcType=VARCHAR},
-      handling_type = #{record.handlingType,jdbcType=VARCHAR},
-      business_department = #{record.businessDepartment,jdbcType=VARCHAR},
-      implementation_department = #{record.implementationDepartment,jdbcType=VARCHAR},
-      implementation_coding = #{record.implementationCoding,jdbcType=VARCHAR},
-      complaint_call = #{record.complaintCall,jdbcType=VARCHAR},
-      location = #{record.location,jdbcType=VARCHAR},
-      support_hotline = #{record.supportHotline,jdbcType=VARCHAR},
-      general_scope = #{record.generalScope,jdbcType=VARCHAR},
-      statutory_time = #{record.statutoryTime,jdbcType=VARCHAR},
-      commitment_time = #{record.commitmentTime,jdbcType=VARCHAR},
-      validity_period = #{record.validityPeriod,jdbcType=VARCHAR},
-      scope = #{record.scope,jdbcType=VARCHAR},
-      dispatch = #{record.dispatch,jdbcType=VARCHAR},
-      intermediary_service = #{record.intermediaryService,jdbcType=VARCHAR},
-      field_connector = #{record.fieldConnector,jdbcType=VARCHAR},
-      site_access_path = #{record.siteAccessPath,jdbcType=VARCHAR},
-      online_connection = #{record.onlineConnection,jdbcType=VARCHAR},
-      online_access_path = #{record.onlineAccessPath,jdbcType=VARCHAR},
-      logistics_express = #{record.logisticsExpress,jdbcType=VARCHAR},
-      express_form = #{record.expressForm,jdbcType=VARCHAR},
-      support_reservation = #{record.supportReservation,jdbcType=VARCHAR},
-      appointment_route = #{record.appointmentRoute,jdbcType=VARCHAR},
-      quantitative_restrictions = #{record.quantitativeRestrictions,jdbcType=VARCHAR},
-      quantitative_number = #{record.quantitativeNumber,jdbcType=VARCHAR},
-      joint_office = #{record.jointOffice,jdbcType=VARCHAR},
-      joint_department = #{record.jointDepartment,jdbcType=VARCHAR},
-      operating_system = #{record.operatingSystem,jdbcType=VARCHAR},
-      system_name = #{record.systemName,jdbcType=VARCHAR},
-      processing_results = #{record.processingResults,jdbcType=VARCHAR},
-      result_sample = #{record.resultSample,jdbcType=VARCHAR},
-      setting_basis = #{record.settingBasis,jdbcType=VARCHAR},
-      charge = #{record.charge,jdbcType=VARCHAR},
-      charges = #{record.charges,jdbcType=VARCHAR},
-      charge_basis = #{record.chargeBasis,jdbcType=VARCHAR},
-      application_conditions = #{record.applicationConditions,jdbcType=VARCHAR},
-      authority_division = #{record.authorityDivision,jdbcType=VARCHAR},
-      qu = #{record.qu,jdbcType=VARCHAR}
-    <if test="_parameter != null">
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="com.example.model.InformationSheet">
-    update information_sheet
-    <set>
-      <if test="tableName != null">
-        table_name = #{tableName,jdbcType=VARCHAR},
-      </if>
-      <if test="itemName != null">
-        item_name = #{itemName,jdbcType=VARCHAR},
-      </if>
-      <if test="basicCoding != null">
-        basic_coding = #{basicCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="childName != null">
-        child_name = #{childName,jdbcType=VARCHAR},
-      </if>
-      <if test="typeName != null">
-        type_name = #{typeName,jdbcType=VARCHAR},
-      </if>
-      <if test="approvalCategory != null">
-        approval_category = #{approvalCategory,jdbcType=VARCHAR},
-      </if>
-      <if test="serviceObject != null">
-        service_object = #{serviceObject,jdbcType=VARCHAR},
-      </if>
-      <if test="administrativeExamination != null">
-        administrative_examination = #{administrativeExamination,jdbcType=VARCHAR},
-      </if>
-      <if test="exerciseLevel != null">
-        exercise_level = #{exerciseLevel,jdbcType=VARCHAR},
-      </if>
-      <if test="handlingType != null">
-        handling_type = #{handlingType,jdbcType=VARCHAR},
-      </if>
-      <if test="businessDepartment != null">
-        business_department = #{businessDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="implementationDepartment != null">
-        implementation_department = #{implementationDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="implementationCoding != null">
-        implementation_coding = #{implementationCoding,jdbcType=VARCHAR},
-      </if>
-      <if test="complaintCall != null">
-        complaint_call = #{complaintCall,jdbcType=VARCHAR},
-      </if>
-      <if test="location != null">
-        location = #{location,jdbcType=VARCHAR},
-      </if>
-      <if test="supportHotline != null">
-        support_hotline = #{supportHotline,jdbcType=VARCHAR},
-      </if>
-      <if test="generalScope != null">
-        general_scope = #{generalScope,jdbcType=VARCHAR},
-      </if>
-      <if test="statutoryTime != null">
-        statutory_time = #{statutoryTime,jdbcType=VARCHAR},
-      </if>
-      <if test="commitmentTime != null">
-        commitment_time = #{commitmentTime,jdbcType=VARCHAR},
-      </if>
-      <if test="validityPeriod != null">
-        validity_period = #{validityPeriod,jdbcType=VARCHAR},
-      </if>
-      <if test="scope != null">
-        scope = #{scope,jdbcType=VARCHAR},
-      </if>
-      <if test="dispatch != null">
-        dispatch = #{dispatch,jdbcType=VARCHAR},
-      </if>
-      <if test="intermediaryService != null">
-        intermediary_service = #{intermediaryService,jdbcType=VARCHAR},
-      </if>
-      <if test="fieldConnector != null">
-        field_connector = #{fieldConnector,jdbcType=VARCHAR},
-      </if>
-      <if test="siteAccessPath != null">
-        site_access_path = #{siteAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="onlineConnection != null">
-        online_connection = #{onlineConnection,jdbcType=VARCHAR},
-      </if>
-      <if test="onlineAccessPath != null">
-        online_access_path = #{onlineAccessPath,jdbcType=VARCHAR},
-      </if>
-      <if test="logisticsExpress != null">
-        logistics_express = #{logisticsExpress,jdbcType=VARCHAR},
-      </if>
-      <if test="expressForm != null">
-        express_form = #{expressForm,jdbcType=VARCHAR},
-      </if>
-      <if test="supportReservation != null">
-        support_reservation = #{supportReservation,jdbcType=VARCHAR},
-      </if>
-      <if test="appointmentRoute != null">
-        appointment_route = #{appointmentRoute,jdbcType=VARCHAR},
-      </if>
-      <if test="quantitativeRestrictions != null">
-        quantitative_restrictions = #{quantitativeRestrictions,jdbcType=VARCHAR},
-      </if>
-      <if test="quantitativeNumber != null">
-        quantitative_number = #{quantitativeNumber,jdbcType=VARCHAR},
-      </if>
-      <if test="jointOffice != null">
-        joint_office = #{jointOffice,jdbcType=VARCHAR},
-      </if>
-      <if test="jointDepartment != null">
-        joint_department = #{jointDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="operatingSystem != null">
-        operating_system = #{operatingSystem,jdbcType=VARCHAR},
-      </if>
-      <if test="systemName != null">
-        system_name = #{systemName,jdbcType=VARCHAR},
-      </if>
-      <if test="processingResults != null">
-        processing_results = #{processingResults,jdbcType=VARCHAR},
-      </if>
-      <if test="resultSample != null">
-        result_sample = #{resultSample,jdbcType=VARCHAR},
-      </if>
-      <if test="settingBasis != null">
-        setting_basis = #{settingBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="charge != null">
-        charge = #{charge,jdbcType=VARCHAR},
-      </if>
-      <if test="charges != null">
-        charges = #{charges,jdbcType=VARCHAR},
-      </if>
-      <if test="chargeBasis != null">
-        charge_basis = #{chargeBasis,jdbcType=VARCHAR},
-      </if>
-      <if test="applicationConditions != null">
-        application_conditions = #{applicationConditions,jdbcType=VARCHAR},
-      </if>
-      <if test="authorityDivision != null">
-        authority_division = #{authorityDivision,jdbcType=VARCHAR},
-      </if>
-      <if test="qu != null">
-        qu = #{qu,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where id = #{id,jdbcType=INTEGER}
-  </update>
-  <update id="updateByPrimaryKey" parameterType="com.example.model.InformationSheet">
+  <update id="updateByPrimaryKey" parameterType="com.example.model.InformationSheet" >
     update information_sheet
     set table_name = #{tableName,jdbcType=VARCHAR},
       item_name = #{itemName,jdbcType=VARCHAR},

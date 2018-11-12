@@ -4,10 +4,8 @@ import com.example.model.CommonQuestion;
 import com.example.model.CommonQuestionExample;
 import java.math.BigDecimal;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface CommonQuestionMapper {
     int countByExample(CommonQuestionExample example);
 

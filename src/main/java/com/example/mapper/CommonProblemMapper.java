@@ -3,10 +3,8 @@ package com.example.mapper;
 import com.example.model.CommonProblem;
 import com.example.model.CommonProblemExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface CommonProblemMapper {
     int countByExample(CommonProblemExample example);
 

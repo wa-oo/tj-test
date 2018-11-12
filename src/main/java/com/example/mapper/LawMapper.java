@@ -4,10 +4,8 @@ import com.example.model.Law;
 import com.example.model.LawExample;
 import java.math.BigDecimal;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface LawMapper {
     int countByExample(LawExample example);
 

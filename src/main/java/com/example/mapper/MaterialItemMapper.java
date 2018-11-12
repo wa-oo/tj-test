@@ -4,10 +4,8 @@ import com.example.model.MaterialItem;
 import com.example.model.MaterialItemExample;
 import java.math.BigDecimal;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface MaterialItemMapper {
     int countByExample(MaterialItemExample example);
 

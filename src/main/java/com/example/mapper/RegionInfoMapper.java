@@ -3,10 +3,8 @@ package com.example.mapper;
 import com.example.model.RegionInfo;
 import com.example.model.RegionInfoExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface RegionInfoMapper {
     int countByExample(RegionInfoExample example);
 

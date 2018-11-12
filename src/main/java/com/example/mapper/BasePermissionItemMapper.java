@@ -3,10 +3,8 @@ package com.example.mapper;
 import com.example.model.BasePermissionItem;
 import com.example.model.BasePermissionItemExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface BasePermissionItemMapper {
     int countByExample(BasePermissionItemExample example);
 

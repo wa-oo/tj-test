@@ -3,10 +3,8 @@ package com.example.mapper;
 import com.example.model.SpecialInfo;
 import com.example.model.SpecialInfoExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface SpecialInfoMapper {
     int countByExample(SpecialInfoExample example);
 

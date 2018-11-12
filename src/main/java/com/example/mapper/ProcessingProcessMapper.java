@@ -3,10 +3,8 @@ package com.example.mapper;
 import com.example.model.ProcessingProcess;
 import com.example.model.ProcessingProcessExample;
 import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-@Mapper
+
 public interface ProcessingProcessMapper {
     int countByExample(ProcessingProcessExample example);
 
